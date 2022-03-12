@@ -87,6 +87,11 @@ html {
 
 }
 
+.div-save-button button:hover{
+    background-color: #555555;
+    font-size: 11px;
+}
+
 .div-recipe-text #recipe-text{
     margin-top: 20px;
     font-family: 'Josefin Sans', sans-serif;
