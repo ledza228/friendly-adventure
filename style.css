@@ -1,57 +1,56 @@
 
 .recipe-preview-parent {
-    margin: auto;
-    width: 1121px;
-    height: 374px;
-    color: #000;
-    background-color: #FFF;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 19px 22px 0px 32px;  
+     margin: auto;
+     width: 1121px;
+     height: 374px;
+     color: #000;
+     background-color: #FFF;
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     padding: 19px 22px 0px 32px;  
 }
 
 .recipe-preview {
-    display: inline-block;
-    width: 314px;
-    margin: 21px;
+     display: inline-block;
+     width: 314px;
+     margin: 21px;
 }
 
 .recipe-preview:hover > .recipe-preview-text-title{
-    color: rgb(0, 0, 0);
-    background-color: rgb(236, 236, 236);
-    border: 2px solid #FFF;
+     color: rgb(0, 0, 0);
+     background-color: rgb(236, 236, 236);
+     border: 2px solid #FFF;
 }
 .recipe-preview-image img {
-    max-height: 209px;
-    transition: transform .2s ease-out;
+     max-height: 209px;
+     transition: transform .2s ease-out;
 }
 
 .recipe-preview-image:hover {
-    transform: scale(1.01);
+     transform: scale(1.01);
 }
 
 .recipe-preview-text-title {
-    font-size: 18px;
-    font-family: 'Josefin Sans', sans-serif;
-    transition: 0.3s linear;
-    border: 2px solid #FFF;
-    border-radius: 10px;
+     font-size: 18px;
+     font-family: 'Josefin Sans', sans-serif;
+     transition: 0.3s linear;
+     border: 2px solid #FFF;
+     border-radius: 10px;
 }
 
 .recipe-preview-text-info {
-    font-size: 12px !important;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter !important;
-    font-style: normal;
-    transition: 0.3s linear;
-    border: 2px solid #FFF;
-    border-radius: 10px;
-    
+     font-size: 12px !important;
+     font-family: 'Open Sans', sans-serif;
+     font-weight: lighter !important;
+     font-style: normal;
+     transition: 0.3s linear;
+     border: 2px solid #FFF;
+     border-radius: 10px;
 }
 
 .recipe-preview-text-info:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(243, 243, 243);
-    border: 2px solid #FFF;
+     color: rgb(0, 0, 0);
+     background-color: rgb(243, 243, 243);
+     border: 2px solid #FFF;
 }
