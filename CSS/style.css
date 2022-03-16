@@ -1,4 +1,5 @@
 body{
+    margin: auto;
     width: 1440px;
     height: 9131px;
     background-color:rgba(234, 234, 234, 1);
@@ -11,6 +12,8 @@ body{
 }
 
 .wrapper{
+    display: flex;
+    flex-direction: column;
     width: 1121px;
     height: 9131px;
     background-color: rgba(234, 234, 234, 1);
@@ -108,6 +111,7 @@ button:hover:before {
     align-items: flex-start;
     justify-content: center;
     padding: 19px 22px 0px 32px;  
+    margin-bottom: 87px;
 }
 
 .recipe-preview {
@@ -155,7 +159,6 @@ button:hover:before {
 }
 
 .div-recipe{
-    margin-top: 100px;
     width: 1120px;
     height: 440px;
     
