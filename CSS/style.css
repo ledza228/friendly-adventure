@@ -220,7 +220,7 @@ button:hover:before {
 }
 
 .recipe-save-button{
-    background-color: white; /* Green */
+    background-color: white;
     border: solid #c1c1c1 1px;
     font-size: 12px;
     color: black;
@@ -241,6 +241,7 @@ button:hover:before {
 .div-recipe-text #recipe-text{
     margin-top: 20px;
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
     font-size: 16px;
     margin-right: 50px;
     overflow-y: scroll;
@@ -252,3 +253,96 @@ button:hover:before {
     margin-top: 5px;
 }
 
+
+
+/* 404 and author divs */
+
+.div-404-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.div-child-404-author {
+    width: 518px;
+    height: 518px;
+    background-color: white;
+}
+
+.div-child-404-author #error-404{
+    padding-left: 33px;
+    padding-right: 45px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.div-child-404-author hr{
+    background-color: #dddddd;
+    border: none;
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+/* 404 ERROR DIV*/
+
+#error-404 p{
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 11px;
+    margin-top: 19px;
+    margin-bottom: 0;
+}
+
+#error-404-text{
+    text-align: center;
+    padding-top: 155px;
+    padding-left: 5px;
+}
+
+#error-404-text span{
+    font-size: 34px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+#error-404-text p{
+    font-family: 'Playfair Display', serif;
+    color: rgb(169,169,169, 0.66);
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#error-404-text #smile{
+    font-size: 33px;
+    transform: rotate(75deg) translate(-2px, -10px);
+}
+
+.div-404-button{
+    padding-top: 37px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.div-404-button button{
+    background-color: rgb(250,251,250);
+    width: 103px;
+    height: 26px;
+    border: solid #c1c1c1 1px;
+      
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.div-404-button button:hover{
+    background-color: #555555;
+}
+
+.div-404-button button:active{
+    font-size: 11px;
+}
