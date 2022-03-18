@@ -1,0 +1,348 @@
+body{
+    margin: auto;
+    width: 1440px;
+    height: 9131px;
+    background-color:rgba(234, 234, 234, 1);
+}
+
+.logo{
+    text-align: center;
+    margin-top: 250px;
+    padding-bottom: 119px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 1121px;
+    height: 9131px;
+    background-color: rgba(234, 234, 234, 1);
+    padding-left: 151px;    
+}   
+
+.main_block{
+    background: rgba(248, 248, 248, 1);
+    height: 124px;
+    margin-bottom: 71px;
+    box-shadow: 0 0 30px rgba(213, 213, 213, 1);
+}
+
+.background_for_bananas{
+    background-color: rgba(239, 238, 238, 1);
+    height: 449px;
+    box-shadow: 0 0 30px rgba(213, 213, 213, 1);
+    padding-left: 91px;
+    
+
+    border-left: 2px;
+    border-right: 9px;
+    border-top: 6px;
+    border-bottom: 4px;
+}
+
+.background_for_bananas a img{
+    padding-top: 51px;
+}
+
+.background_for_bananas h1{
+    margin-top: 35px;
+    color: rgba(146, 16, 38, 1);
+    font-size: 32px;
+    font-weight:lighter;
+}
+
+.background_for_bananas h1{
+    margin: top 28px;   
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: -2px;    
+}
+
+.background_for_bananas h2{
+    font-family: 'Josefin Sans', serif;
+    font-weight: 100;
+    font-size: 16px;
+    font-weight:lighter;
+    margin-bottom: 27px;
+}
+
+.background_for_bananas button{
+    width: 107px;
+    height: 30px;
+    border: none;
+    border-radius: 0px;
+    background-color: rgba(248, 248, 248, 1);
+    border-color: rgba(240, 240, 240, 1);
+    outline: 2px solid rgba(240, 240, 240, 1);
+
+    font-family: 'Josefin Sans', serif;
+    font-size: 12px;
+    font-weight: lighter;
+
+    position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease; 
+}
+
+.background_for_bananas button:before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 30px;
+	background: rgba(232,232,232,0.3);
+	transition: all 2s ease;
+}
+
+
+button:hover:before {
+	width: 100%;
+}
+
+.recipe-preview-parent {
+    margin: auto;
+    margin-top: 85px;
+
+    height: 374px;
+    color: #000;
+    background-color: #FFF;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 19px 22px 0px 32px;  
+    margin-bottom: 87px;
+}
+
+.recipe-preview {
+    display: inline-block;
+    width: 314px;
+    margin: 21px;
+}
+
+.recipe-preview:hover > .recipe-preview-text-title{
+    color: rgb(0, 0, 0);
+    background-color: rgb(236, 236, 236);
+    border: 2px solid #FFF;
+}
+.recipe-preview-image img {
+    max-height: 209px;
+    transition: transform .2s ease-out;
+}
+
+.recipe-preview-image:hover {
+    transform: scale(1.01);
+}
+
+.recipe-preview-text-title {
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 0.3s linear;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+}
+
+.recipe-preview-text-info {
+    font-size: 12px !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter !important;
+    font-style: normal;
+    transition: 0.3s linear;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+}
+
+.recipe-preview-text-info:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(243, 243, 243);
+    border: 2px solid #FFF;
+}
+
+.div-recipe{
+    width: 1120px;
+    height: 440px;
+    
+    display: flex;    
+    background-color: #ffffff;
+}
+
+.div-recipe-image{
+    width: 520px;
+    position: relative;
+}
+
+.div-recipe-text{
+    width: 600px;
+    margin-left: 35px;
+}
+
+.div-recipe-photo-icon{
+    float: left;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 15px;
+    color: #FFFFFF;
+
+    font-size: 25px;
+}
+
+#recipe-text-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #055555;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.div-recipe-text-icons{
+    display: flex;
+    justify-content:space-between;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #555555;
+}
+
+
+#div-level-time{
+    font-size: 18px;
+}
+
+.div-recipe-text-icons span{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.div-save-button{
+    flex:content;
+}
+
+.recipe-save-button{
+    background-color: white;
+    border: solid #c1c1c1 1px;
+    font-size: 12px;
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+
+    float: inline-end;
+    margin-right: 70px;
+    width: 105px;
+    height: 25px;  
+
+}
+
+.div-save-button button:hover{
+    background-color: #555555;
+    font-size: 11px;
+}
+
+.div-recipe-text #recipe-text{
+    margin-top: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin-right: 50px;
+    overflow-y: scroll;
+    height: 265px;
+}
+
+
+.div-recipe-text #recipe-text p{
+    margin-top: 5px;
+}
+
+
+
+/* 404 and author divs */
+
+.div-404-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.div-child-404-author {
+    width: 518px;
+    height: 518px;
+    background-color: white;
+}
+
+.div-child-404-author #error-404{
+    padding-left: 33px;
+    padding-right: 45px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.div-child-404-author hr{
+    background-color: #dddddd;
+    border: none;
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+/* 404 ERROR DIV*/
+
+#error-404 p{
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 11px;
+    margin-top: 19px;
+    margin-bottom: 0;
+}
+
+#error-404-text{
+    text-align: center;
+    padding-top: 155px;
+    padding-left: 5px;
+}
+
+#error-404-text span{
+    font-size: 34px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+#error-404-text p{
+    font-family: 'Playfair Display', serif;
+    color: rgb(169,169,169, 0.66);
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#error-404-text #smile{
+    font-size: 33px;
+    transform: rotate(75deg) translate(-2px, -10px);
+}
+
+.div-404-button{
+    padding-top: 37px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.div-404-button button{
+    background-color: rgb(250,251,250);
+    width: 103px;
+    height: 26px;
+    border: solid #c1c1c1 1px;
+      
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.div-404-button button:hover{
+    background-color: #555555;
+}
+
+.div-404-button button:active{
+    font-size: 11px;
+}
