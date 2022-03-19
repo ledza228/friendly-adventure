@@ -115,6 +115,10 @@ button:hover:before {
     margin-bottom: 87px;
 }
 
+/* 
+    recipe-preview styles 
+*/
+
 .recipe-preview {
     display: inline-block;
     width: 314px;
