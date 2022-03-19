@@ -258,6 +258,7 @@ button:hover:before {
 /* 404 and author divs */
 
 .div-404-author {
+    margin-top: 140px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -346,3 +347,91 @@ button:hover:before {
 .div-404-button button:active{
     font-size: 11px;
 }
+
+.author-main-block{
+    display: flex;
+    flex-direction: row;
+}
+
+.author-main-block #img{
+    width: 170px;
+}
+
+.author-main-block #img img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-left: 31px;    
+    margin-top: 23px;
+}
+
+.author-main-block #text{
+    width: 348px;
+    padding-left: 10px;
+}
+
+.div-author-main-info{
+    padding-top: 38px;
+}
+
+.div-author-main-info span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.div-author-main-info #country{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    
+}
+
+.div-author-main-info #icons{
+    margin-top: 9px;
+    margin-left: 1px;
+    margin-bottom: 0px;
+}
+
+.div-author-main-info #icons a{
+    font-size: 16px;
+    color: rgb(85,85,85, 0.33);
+}
+
+.div-author-main-info hr{
+    width: 291px;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.div-author-text{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.div-author-text #title{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.div-author-text #text{
+    font-size: 14px;
+    font-weight: 200;
+    font-style: italic;
+    padding-left: 0px;
+    width: 260px;
+    margin-top: 27px;
+}
+
+.author-signature{
+    margin-top: -25px;
+    margin-left: 120px;
+}
+
+/*end*/
+
