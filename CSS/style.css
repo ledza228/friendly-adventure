@@ -580,12 +580,111 @@ small divs
 	text-decoration: underline;
 }
 
+/*
+	Popular now small div
+*/
+
+.popular-now-small-div{
+	width: 290px;
+	height: 349px;
+	background-color: #988f8f;
+}
+
+.popular-now-small-div #title{
+	padding-left: 17px;
+}
+
+.popular-now-small-div #title p{
+	font-family: 'Playfair Display', serif;
+	font-size: 32px;
+	font-weight: 900;
+	color: #921026;
+	padding-top: 20px;
+	margin-top: 0px;
+}
+
+.popular-now-small-div #title hr{
+	width: 251px;
+	border: none;
+	height: 2px;
+	background-color: #ffffff;	
+	margin-left: 0px;
+	margin-top: 10px;
+	margin-bottom: 23px;
+}
+
+.popular-now-small-div #content{
+	padding-left: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.popular-now-small-div #content span{
+	font-size: 22px;
+	font-weight: 700;
+	color: black;
+}
+
+.popular-now-small-div #content p{
+	font-size: 16px;
+	font-weight: 400;
+	color: #222222;
+	font-style: italic;
+	margin-top: 15px;
+	width: 239px;
+	margin-bottom: 18px;
+	
+}
+
+.popular-now-small-div #bottom{
+	padding-left: 18px;
+}
+
+.popular-now-small-div #bottom button{
+	width: 105px;
+	height: 28px;
+	border: 1px solid #c2c2c2;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	color: black;
+	margin-right: 8px;
+}
+
+.popular-now-small-div #bottom #slash{
+	width: 1px;
+	height: 14px;
+	color: black;
+	font-size: 14px;
+}
+
+.popular-now-small-div #bottom span{
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	color: #555555;
+	font-weight: 400;
+}
+
+.popular-now-small-div #bottom #mins{
+	font-weight: 300;
+}
+
+
+.popular-now-small-div #bottom button:hover{
+	font-size: 11.5px;
+	transition: font-size 0.1s;
+}
+
+.popular-now-small-div #bottom button:active{
+	font-size: 11px;
+	color: #555555;
+}
+
 
 /*
 	Timeline small div
 */
 .timeline-small-div{
-	margin-top: 100px;
+	margin-top: 48px;
 	width: 290px;
 	height: 430px;
 	background-color: white;
