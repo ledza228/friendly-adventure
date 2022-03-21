@@ -414,7 +414,7 @@ button:hover:before {
 }
 
 .div-author-text{
-    	font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .div-author-text #title{
@@ -466,6 +466,84 @@ small divs
 }
 
 
+/*Calendar*/
+
+.div-calendar{
+	width: 290px;
+	margin-top: 100px;
+	background-color: white;
+	height: 367px;
+}
+
+
+.div-calendar-title{
+	margin-left: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.div-calendar-title p {
+	padding-top: 24px;
+	margin-bottom: 4px;
+	margin-top: 0px;
+}
+
+.div-calendar-title hr{
+	width: 252px;
+	height: 2px;
+	background-color: #555555;
+	opacity: 0.2;
+	border: none;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+.div-calendar-month{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 31px;
+	margin-right: 33px;
+	margin-top: 19px;
+}
+
+.div-calendar-month #calendar-angle{
+	height: 20px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #555555;
+}
+
+.div-calendar-month #calendar-month{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+
+.div-calendar-table{
+	margin-left: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	width: 222px;
+	margin-top: 0px;
+}
+
+.div-calendar-table table{
+	border-spacing: 15px 20px;
+}
+
+.div-calendar-table #calendar-months-table{
+	text-decoration: underline;
+}
+
+.div-calendar-table #past-month{
+	color: #9e9e9e;
+	opacity: 0.62;
+}
 /* 
     Authentication
 
