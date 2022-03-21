@@ -136,7 +136,7 @@ button:hover:before {
 }
 
 .recipe-preview-image:hover {
-    	transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 .recipe-preview-text-title {
@@ -741,8 +741,13 @@ small divs
 }
 
 .div-authentication-form{
-    	width: 328px;
+    width: 328px;
 	background-color: #FFF;
+	padding-bottom: 20px;
+}
+
+#login{
+	max-height: 359px;
 }
 
 .div-authentication-form #title{
@@ -798,23 +803,131 @@ small divs
 	box-shadow: inset 2px 2px 2px rgb(110, 110, 110), inset -1px -1px 5px rgb(110, 110, 110);
 }
 
+.div-authentication-form-checkbox{
+	display: block;
+	position: relative;
+	padding-left: 18px;
+	margin-bottom: 12px;
+	margin-left: 28px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.div-authentication-form-checkbox input{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
 .div-authentication-form-checkbox-custom{
 	width: 8px;
 	height: 8px;
 	border: 2.5px solid #ccc;
-	border-radius: 5px;
+	border-radius: 3px;
 	background-color: #ffffff;
-	margin-left: 28px;
-	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.1s;
+}
+
+.div-authentication-form-checkbox:hover input ~ .div-authentication-form-checkbox-custom{
+	background-color: #ccc;
+}
+
+.div-authentication-form-checkbox input:checked ~ .div-authentication-form-checkbox-custom{
+	background-color: rgb(100, 100, 100);
+}
+
+
+.div-authentication-form-checkbox input:checked ~ .div-authentication-form-checkbox-custom:after {
+	display: block;
 }
 
 .div-authentication-form-checkbox-text{
-	display: inline;
 	font-size: 12px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
 	font-weight: 300;
-	border: 2.5px solid #FFF;
 }
 
+.div-authentication-form-checkbox-forgot{
+	margin-right: 35px;
+	transition: 0.2s;
+	text-decoration: none;
+	color: rgb(77, 77, 77);
+}
+
+.div-authentication-form-checkbox-forgot:hover{
+	color: rgb(161, 161, 161);
+	outline: #000;
+}
+
+.div-authentication-form-checkbox-parent{
+	display: flex;
+	justify-content: space-between;
+}
+
+.div-authentication-form-bottom{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 20px 0px;
+}
+
+.div-authentication-button{
+	text-align: center;
+	line-height: 27px;
+	width: 104px;
+	height: 27px;
+	font-style: normal;
+	border: 1px solid #ccc;
+	transition: 0.3s;
+}
+
+.div-authentication-button:hover{
+	background-color: rgb(77, 77, 77);
+	color: #FFF;
+	font-size: 14px;
+}
+
+.div-authentication-socials{
+	margin: 15px 0 10px 0;
+}
+
+.div-authentication-socials a{
+    font-size: 16px;
+    color: rgb(77, 77, 77);
+}
+
+.div-authentication-socials a:hover{
+	color:rgba(146, 16, 38, 1);
+}
+
+.div-authentication-donthave{
+	margin-right: 0px;
+	font-size: 16px;
+}
+
+.div-authentication-tos{
+	font-size: 14px;
+	padding-left: 28px;
+}
+
+.div-authentication-log-alternate{
+	flex: none;
+	text-align: left;
+	width: 100%;
+	margin: 10px 0 0 0;
+	padding-left: 28px;
+	padding-bottom: 20px;
+	text-decoration: none;
+	font-style: normal;
+	color: rgb(77, 77, 77);
+}
    
