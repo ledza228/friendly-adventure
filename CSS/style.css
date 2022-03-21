@@ -441,6 +441,30 @@ button:hover:before {
 
 /*end*/
 
+/*
+small divs
+*/
+
+.small-divs{
+	display: flex;
+	flex-direction: row;
+	margin-left: 201px;
+}
+
+.left-small-divs{
+	width: 290px;
+	margin-right: 96px;
+}
+
+.middle-small-divs{
+	width: 290px;
+	margin-right: 58px;
+}
+
+.right-small-divs{
+	width: 290px;
+}
+
 
 /* 
     Authentication
