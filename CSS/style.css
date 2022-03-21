@@ -580,6 +580,155 @@ small divs
 	text-decoration: underline;
 }
 
+
+/*
+	Timeline small div
+*/
+.timeline-small-div{
+	margin-top: 100px;
+	width: 290px;
+	height: 430px;
+	background-color: white;
+
+}
+
+.timeline-small-div #head{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 19px;
+	padding-right: 33px;
+	padding-top: 37px;
+} 
+
+.timeline-small-div #head #title{
+	font-size: 20px;
+	font-weight: 400;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+
+}
+
+.timeline-small-div #head #icons a{
+	font-size: 16px;
+	color: #555555;
+	font-weight: 400;
+
+}
+.timeline-small-div #head #icons .fa-facebook-f{
+	font-size: 14.3px;
+}
+
+.timeline-small-div #upper-line-hr{
+	background-color: #555555;
+	width: 251px;
+	border: none;
+	height: 2px;
+	margin-top: 10px;
+	margin-left: 17px;
+	margin-bottom: 0px;
+	opacity: 0.2;
+}
+
+.timeline-small-div #title-colomns{
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
+	font-weight: 900;
+	color: #055555;
+	margin-left: 30px;
+	margin-top: 19px;
+	margin-bottom: 0px;
+}
+
+.timeline-small-div #colomns{
+	height: 154px;
+	padding-top: 50px;
+	width: 200px;
+
+	transform-origin: 102px 102px;
+
+	transform: translate(100px,100px);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	
+}
+
+.timeline-small-div #colomns-part{
+	padding-bottom: 53.5px;
+}
+
+.timeline-small-div #level-name{
+	opacity: 0.8;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color:#555555;
+	height: 15px;
+}
+
+.timeline-small-div #level-name span{
+	position: absolute;
+}
+
+.timeline-small-div #colomn-line{
+	display: flex;
+	flex-direction: row;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #555555;
+
+}
+
+.timeline-small-div #easy-colomn{
+	margin-right: 4px;
+	margin-top: 6px;
+	width: 68px;
+	height: 9px;
+	background-color: #87d0c5;
+}
+
+.timeline-small-div #middle-colomn{
+	margin-right: 5px;
+	margin-top: 5px;
+	width: 99px;
+	height: 9px;
+	background-color: #0d5959;
+}
+
+.timeline-small-div #long-colomn{
+	margin-right: 4px;
+	margin-top: 3.5px;
+	height: 9px;
+	width: 131px;
+	background-color: #b50051;
+}
+
+.bottom-timeline-div{
+	margin-left: 50px;
+	width: 203px;
+}
+
+.bottom-timeline-div hr{
+	margin-top: 19px;
+	border: none;
+	height: 2px;
+	background-color: #555555;
+	opacity: 0.2;
+}
+
+.bottom-timeline-div p{
+	margin-top: 13px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #6a6a6a;
+}
+
 /* 
     Authentication
 
