@@ -330,14 +330,14 @@ button:hover:before {
 
 #error-404-text{
 	text-align: center;
-	padding-top: 161px;
+	padding-top: 155px;
 	padding-left: 5px;
 }
 
 #error-404-text span{
 	font-size: 34px;
 	font-family: 'Josefin Sans', sans-serif;
-	font-weight: 700;
+	font-weight: 600;
 	color: black;
 }
 
@@ -346,7 +346,7 @@ button:hover:before {
 	color: rgb(169,169,169, 0.66);
 	font-size: 16px;
 	font-weight: 900;
-	margin-top: 5px;
+	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
@@ -497,124 +497,7 @@ small divs
 .right-small-divs{
 	width: 290px;
 }
-/* Chi-Chi*/
-.chi-chi-div {
-	width: 289px;
-	height: 349px;
-	background-color: white;
-	margin-bottom: 48px;
-}
 
-
-.chi-chi-div #header{
-	padding-top: 22px;
-	padding-left: 16px;
-}
-
-.chi-chi-div #header p {
-	font-family: 'Playfair Display', serif;
-	font-size: 22px;
-	font-weight: 900;
-	color: #055555;
-	margin-top: 0px;
-	padding-left: 29px;
-	margin-bottom: 10px;
-}
-
-.chi-chi-div #header hr{
-	width: 252px;
-	border: none;
-	height: 2px;
-	background-color: #555555;
-	opacity: 0.2;
-	margin: 0 0 0 0;	
-}
-
-.chi-chi-div #content{
-	margin-top: 9px;
-	margin-left: 23px;
-	display: flex;
-	flex-direction: row;
-}
-
-.chi-chi-div img{
-	width: 58px;
-	height: 58px;
-	border-radius: 50%;
-}
-
-.chi-chi-div #text{
-	padding-top: 8px;
-	padding-left: 19px;
-	
-}
-
-.chi-chi-div #text span{
-	font-weight: bold;
-}
-
-.chi-chi-div #text p{
-	margin: 0 0 0 0;
-}
-
-.chi-chi-div #text #author{
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 15px;
-	font-weight: 300;
-	letter-spacing: -0.025em;
-}
-
-.chi-chi-div #icons{
-	margin-top: 4px;
-	font-size: 12px;
-	font-weight: 400;
-	color: #555555;
-	font-family: 'Open Sans', sans-serif;
-}
-.chi-chi-div #icons span{
-	font-weight: 300;
-}
-.chi-chi-div #slash{
-	color: black;
-	font-size: 14px;
-}
-
-.chi-chi-div #bottom{
-	margin-top: 10px;
-	width: 289px;
-	height: 204px;
-	background-color: white;
-}
-
-.chi-chi-div #dots-under-photo{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-left: 111px;
-	margin-right: 101px;
-	padding-top: 186px;
-}
-
-.photo-circle{
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background-color: white;
-}
-
-.photo-circle-gray{
-	background-color: #555555;
-}
-
-.photo-circle:hover{
-	width: 12px;
-	height: 12px;
-	transition: 0.2s;
-}
-
-.photo-circle:active{
-	background-color: #555555;
-}
 /* Target */
 
 .left-small-divs .presentation_line{
@@ -841,6 +724,7 @@ small divs
 }
 
 .middle-small-divs-tags{
+	margin-top: 47px;
 	width: 290px;
 	height: 160px;
 	background-color: white;
@@ -1436,3 +1320,112 @@ small divs
 	color: rgb(77, 77, 77);
 }
    
+.div-comments{
+	padding-top: 125px;
+	padding-left: 132px;
+	width: 839px;
+}
+
+.div-comments-post{
+	height: 188px;
+	background-color: white;
+}
+
+.div-comments-post h1{
+	padding-top:  23px;
+	padding-left: 39px;
+	margin: 0px;
+	font-size: 24px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+	margin-bottom: 0px;
+}
+
+.div-comments-post p{
+	margin-top: -11px;
+	margin-bottom: 0px;
+	padding-left: 590px;
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+	text-decoration: none;
+}
+
+.div-comments-post p a{
+	text-decoration: none;
+	color: #666;
+	margin-right: 12px;
+	margin-left: 12px;
+	margin-bottom: 0px;
+}
+
+.div-comments-post .form_for_comment{
+	margin-top: 14px;
+	width: 754px;
+	height: 90px;
+	background-color: rgb(246,246,246, 1);
+	padding-top: 0px;
+	margin-left: 40px;
+}
+
+.div-comments-post .form_for_comment form img{
+	padding-left: 18px;
+	padding-right: 66px;
+}
+
+.form_for_comment form {
+	padding-top: 13px;
+	margin: 0px;
+	display: flex;
+}
+	
+.form_for_comment form{
+	vertical-align:middle;
+}
+  
+.form_for_comment form .form_for_comment form{
+	margin-top: 11px;
+}
+
+.form_for_comment input[type="text"] {
+	background: white;
+	border: #dfdfdf 1px solid;
+	margin:0;
+	margin-right: 2px;
+	padding:0;
+	margin-top: 11px;
+	display:inline-block;
+	width: 498px;
+	height: 41px;
+	transition: 0.3s;
+}
+  
+.form_for_comment input[type="submit"] {
+	background: rgb(56, 56, 56, 1);
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 16px;
+	
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: lighter;
+	border: black 1px solid;
+	height: 41px;
+	width: 89px;
+	margin:0;
+	padding:0;
+	margin-top: 11px;
+	display:inline-block;
+
+	transition: .8s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+	background-image: linear-gradient(0, white, white);
+    background-size: 0;
+}
+
+.form_for_comment input[type="submit"]:hover{
+	background-size: 100%;
+    color: black;
+
+}	
