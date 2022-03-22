@@ -99,6 +99,21 @@ body{
 
 button:hover:before {
 	width: 100%;
+} 
+
+button:hover:before {
+	width: 100%;
+}
+
+.background_for_bananas ul.ellipse{
+	padding-left: 910px;
+	margin-top: 20px;
+}
+
+.background_for_bananas ul.ellipse li{
+	display: inline;
+	margin-right: 0px;
+	margin-left: 7px;
 }
 
 .recipe-preview-parent {
@@ -465,8 +480,8 @@ small divs
 .small-divs{
 	display: flex;
 	flex-direction: row;
-	margin-left: 201px;
-	margin-top: 140px;
+	margin-top: 76px;
+	margin-left: 49px;
 }
 
 .left-small-divs{
@@ -483,12 +498,275 @@ small divs
 	width: 290px;
 }
 
+/* Target */
+
+.left-small-divs .presentation_line{
+	margin: 0px;
+	width: 290px;
+	height: 471px;
+	background-color: white;
+}
+
+.presentation_line_header{
+	padding-top: 36px;
+	padding-left: 17px;
+	height: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 900;
+}
+
+.presentation_line #head{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 19px;
+	padding-right: 33px;
+	padding-top: 36px;
+} 
+
+.presentation_line #head #title{
+	font-size: 20px;
+	font-weight: 400;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+
+}
+
+.presentation_line #head #icons a{
+	font-size: 16px;
+	color: #555555;
+	font-weight: 400;
+
+}
+.presentation_line #head #icons .fa-facebook-f{
+	font-size: 14.3px;
+}
+
+.presentation_line #upper-line-hr{
+	background-color: #555555;
+	width: 251px;
+	border: none;
+	height: 2px;
+	margin-top: 10px;
+	margin-left: 17px;
+	margin-bottom: 0px;
+	opacity: 0.2;
+}
+
+.presentation_line_header .title_pre_line{
+	margin-right: 80px;
+}
+
+.presentation_line_header iz{
+	margin-right: 6px;
+}
+
+.presentation_line_header hr{
+	width: 252px;
+	height: 2px;
+	background-color: #555555;
+	opacity: 0.2;
+	border: none;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+
+.presentation_line_title p{
+	margin-left: 28px;
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
+	font-weight: 168px;
+	color: #055555;
+	margin-bottom: 0px;
+}
+
+.present_line_diagrams{
+	width: 216px;
+	height: 275px;
+
+	margin-top: 40px;
+	margin-left: 24px;	
+}
+
+.first_diagram{
+	width: 203px;
+	height: 59px;
+	margin-bottom: 0px;
+}
+
+.first_diagram_procent{
+	position: absolute;
+	padding-left: 15px;
+	padding-top: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.first_diagram_information{
+	position: absolute;
+	
+}
+
+.first_diagram h1{
+	padding-left: 84px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+
+	font-weight: lighter;
+}
+
+.first_diagram h2{
+	padding-left: 84px;
+	padding-top: 9px;
+	margin-top: 1px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.present_line_diagrams .first_diagram .red_diagram{
+	margin-left: -35px;
+}
+
+.second_diagram{
+	width: 216px;
+	height: 71px;
+	margin-top: 46px;
+}
+
+.second_diagram_procent{
+	position: absolute;
+	padding-left: 15px;
+	padding-top: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.second_diagram_information{
+	position: absolute;
+}
+
+.second_diagram h1{
+	padding-left: 84px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+
+	font-weight: lighter;
+}
+
+.second_diagram h2{
+	padding-left: 84px;
+	padding-top: 6px;
+	margin-top: 1px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.present_line_diagrams .second_diagram .green_diagram{
+	margin-left: -58px;
+}
+
+.third_diagram{
+	width: 216px;
+	height: 71px;
+	margin-top: 46px;
+}
+
+.third_diagram_procent{
+	position: absolute;
+	padding-left: 15px;
+	padding-top: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.third_diagram_information{
+	position: absolute;
+}
+
+.third_diagram h1{
+	padding-left: 84px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+
+	font-weight: lighter;
+}
+
+.third_diagram h2{
+	padding-left: 84px;
+	padding-top: 6px;
+	margin-top: 1px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.present_line_diagrams .third_diagram .light_green_diagram{
+	margin-left: -64px;
+}
+
+/*TAGS*/
+
+.middle-small-divs{
+	width: 290px;
+}
+
+.middle-small-divs-tags{
+	margin-top: 47px;
+	width: 290px;
+	height: 160px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;	
+}
+
+.tags_header{
+	padding-top: 26px;
+	padding-left: 17px;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 900;
+	margin-bottom: 0px;
+}
+
+.tags_header hr{
+	width: 252px;
+	height: 2px;
+	background-color: #555555;
+	opacity: 0.2;
+	border: none;
+	margin-left: 0px;
+	margin-top: 5px;
+}
+
+.middle-small-divs-tags h1{
+	padding-left: 23px;
+	margin-top: 11px;
+	font-size: 12px;
+	font-weight: 300;
+	padding-bottom: 0px;
+}
+
+.middle-small-divs-tags h1 br{
+	margin-bottom: 13px;
+}
 
 /*Calendar*/
 
 .div-calendar{
 	width: 290px;
-	margin-top: 100px;
+	margin-top: 47px;
 	background-color: white;
 	height: 367px;
 }
