@@ -1328,6 +1328,7 @@ small divs
 .div-comments{
 	width: 838px;
 	background-color: #FFF;
+	margin-top: -100px;
 }
 
 .div-comments-title #title{
@@ -1448,14 +1449,15 @@ small divs
 */	
 
 .div-post-comments{
-	padding-top: 125px;
-	padding-left: 132px;
-	width: 839px;
+	margin-top: 140px;
+	display: flex;
+	justify-content: space-around;
 }
 
 .div-comments-post{
 	height: 188px;
 	background-color: white;
+	width: 838px;
 }
 
 .div-comments-post h1{
