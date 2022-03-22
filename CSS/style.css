@@ -879,7 +879,7 @@ small divs
 	margin-bottom: 0px;
 }
 
-#title p{
+.div-authentication-form #title p{
 	font-size: 20px;
 	font-weight: 400;
 	padding-left: 5px;
@@ -1041,4 +1041,125 @@ small divs
 	font-style: normal;
 	color: rgb(77, 77, 77);
 }
-   
+
+
+/* 
+	COMMENTS BLOCK
+*/
+
+.div-comments{
+	width: 838px;
+	background-color: #FFF;
+}
+
+.div-comments-title #title{
+	font-style: italic;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-left: 38px;
+	padding-right: 54px;
+}
+
+.div-comments hr{
+	background-color: #dddddd;
+	border: none;
+	height: 2px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+}
+
+#title p{
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 19px;
+	margin-bottom: 0;
+}
+
+.div-comments-block{
+	padding-left: 38px;
+	padding-right: 54px;
+	padding-bottom: 50px;
+}
+
+.div-comments-panel{
+	margin-top: 25px;
+	display: flex;
+}
+
+.div-comments-panel > img{
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+}
+
+.div-comments-panel > div{
+	display: flex;
+	padding-left: 30px;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.div-comments-text-postby{
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+}
+
+.div-comments-name{
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+
+.div-comments-reply-button{
+	color: #629494;
+	font-size: 12px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 800;
+	transition: 0.2s;
+}
+
+.div-comments-reply-button:hover{
+	color: #a1f6f6;
+}
+
+.div-comments-date:hover{
+	color: #629494;
+}
+
+.div-comments-shares{
+	display: inline-block;
+	font-size: 12px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+	transition: 0.3s;
+}
+
+.div-comments-shares:hover{
+	color: #a1f6f6;
+}
+
+.div-comments-text{
+	margin-top: 15px;
+	padding-left: 85px;
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+}
+
+.div-comments-text .recipe-preview-image{
+	margin-bottom: 10px;
+}
+
+.div-comments-text .recipe-preview-image:hover{
+	transform: none;
+}
+
+.div-comments-reply{
+	padding-left: 85px;
+}
+
+.div-comments-reply .div-comments-text{
+	font-weight: 400;
+}
