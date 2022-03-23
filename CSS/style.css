@@ -1875,6 +1875,7 @@ footer #main-string{
 	margin-left: 86px;
 	display: flex;
 	flex-direction: row;
+	height: 36px;
 
 	opacity: 0.5;
 	font-family: 'Josefin Sans', sans-serif;
