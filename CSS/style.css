@@ -5,6 +5,28 @@ body{
 	background-color:rgba(234, 234, 234, 1);
 }
 
+
+.common-button{
+	width: 105px;
+	height: 28px;
+	border: 1px solid #c2c2c2;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	color: black;
+	background-color: white;
+}
+
+.common-button:hover{
+	font-size: 11.5px;
+	transition: font-size 0.1s;
+}
+
+.common-button:active{
+	font-size: 11px;
+	color: #555555;
+}
+
 .logo{
 	text-align: center;
 	margin-top: 250px;
@@ -835,6 +857,129 @@ small divs
 
 .present_line_diagrams .third_diagram .light_green_diagram{
 	margin-left: -64px;
+}
+
+/*Recipe*/
+
+.recipe-mini-div{
+	height: 427px;
+	width: 290px;
+	background-color: white;
+}
+
+.recipe-mini-div #head{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 17px;
+	padding-right: 23px;
+	padding-top: 28px;
+} 
+
+.recipe-mini-div #head #title{
+	font-size: 20px;
+	font-weight: 400;
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+
+}
+
+.recipe-mini-div #head #icons a{
+	font-size: 16px;
+	color: #555555;
+	font-weight: 400;
+
+}
+.recipe-mini-div #head #icons .fa-facebook-f{
+	font-size: 14.3px;
+}
+
+.recipe-mini-div #upper-line-hr{
+	background-color: #555555;
+	width: 251px;
+	border: none;
+	height: 2px;
+	margin-top: 2px;
+	margin-left: 17px;
+	margin-bottom: 0px;
+	opacity: 0.2;
+}
+
+.recipe-mini-div #level-title{
+	height: 12px;
+	padding-top: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 52px;
+	padding-right: 69px;
+
+	font-family: 'Josefin Sans', sans-serif;	
+	font-size: 12px;
+	font-weight: 300;
+	color: black;
+	opacity: 0.8;
+	letter-spacing: -0.025em;
+}
+
+.recipe-mini-div #level-title span{
+	font-weight: 700;
+}
+
+.recipe-mini-div #level-title div:hover{
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.recipe-mini-div #content{
+	padding-top: 28px;
+}
+
+.recipe-mini-div #content-block{
+	display: flex;
+	flex-direction: row;
+	padding-left: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	letter-spacing: -0.025em;
+
+}
+
+.recipe-mini-div .content-block2{
+	padding-top: 34px;
+}
+
+.recipe-mini-div .content-block3{
+	padding-top: 37px;
+}
+
+.recipe-mini-div #content-block #text{
+	padding-left: 16px;
+}
+
+.recipe-mini-div #content-block #text p{
+	margin: 0 0 0 0;
+}
+
+.recipe-mini-div #content-block #author{
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.recipe-mini-div #content-block #author span{
+	font-weight: 700;
+}
+
+.recipe-mini-div #content-block #author-text{
+	padding-top: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+	width: 180px;
+}
+
+.recipe-mini-div #bottom{
+	margin-top: 29px;
+	margin-left: 164px;
 }
 
 /*TAGS*/
