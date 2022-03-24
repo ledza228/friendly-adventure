@@ -1823,3 +1823,110 @@ small divs
     color: black;
 
 }	
+
+
+.page-selection{
+	width: 838px;
+	height: 92px;
+	background-color: white;
+	margin-top: 44px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.page-selection #flex-selection{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-right: 285px;
+	margin-left: 270px;
+	margin-top: 35px;
+}
+
+.page-selection a{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 300;
+	color: black;
+	text-decoration: none;
+}
+
+.page-selection #current-number a{
+	color: #629494;
+}
+
+.page-selection a:hover{
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+
+footer{
+	margin-top: 150px;
+	width: 1120px;
+	height: 180px;
+	opacity: 0.8;
+	background-color: black;
+	box-shadow: 0px 3px 7px 0px rgba(11,12,12,0.14);
+}
+
+footer #main-string{
+	margin-top: 72px;
+	margin-left: 86px;
+	display: flex;
+	flex-direction: row;
+	height: 36px;
+
+	opacity: 0.5;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 12px;
+	line-height: 1.2;
+	font-weight: 300;
+	color: #fefefe;
+}
+
+footer #main-string a{
+	color: #fefefe;
+	text-decoration: none;	
+}
+
+footer #main-string a:hover{
+	font-weight: 500;
+}
+
+footer .hrefs {
+	margin-left: 112px;
+	margin-top: 12px;
+}
+
+footer .copyrights{
+	margin-top: 12px;
+	margin-left: 133px;
+}
+
+footer .hrefs a + a{
+	margin-left: 12px;
+}
+
+footer #icons{
+	margin-top: 2px;
+	margin-left: 968px;
+}
+
+footer #icons a{
+	color: #555555;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+footer #icons a:hover{
+	font-weight: 800;
+	color: white;
+}
+
+.fa-facebook-f{
+	font-size: 14px;
+}
