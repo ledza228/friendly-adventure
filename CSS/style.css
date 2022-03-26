@@ -371,11 +371,11 @@ button:hover:before {
 /* 404 ERROR DIV*/
 
 #error-404 p{
-	letter-spacing: 0.025em;
+	letter-spacing: -0.025em;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 700;
-	padding-left: 11px;
+	padding-left: 10px;
 	margin-top: 21px;
 	margin-bottom: 0;
 }
@@ -436,39 +436,38 @@ button:hover:before {
 	border-radius: 50%;
 	width: 130px;
 	height: 130px;
-	margin-left: 31px;    
+	margin-left: 30px;    
 	margin-top: 23px;
 }
 
 .author-main-block #text{
 	width: 348px;
-	padding-left: 10px;
+	padding-left: 12px;
 }
 
 .div-author-main-info{
-    	padding-top: 38px;
+    padding-top: 39px;
+	letter-spacing: -0.025em;
 }
 
 .div-author-main-info span {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 24px;
-	font-weight: bold;
+	font-weight: 700;
+	letter-spacing: -0.05em;
 }
 
 .div-author-main-info #country{
-	margin-top: 0px;
+	margin-top: 8px;
 	margin-bottom: 0px;
 	margin-left: 2px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 16px;
 	font-weight: 300;
-    
 }
 
 .div-author-main-info #icons{
-	margin-top: 9px;
-	margin-left: 1px;
-	margin-bottom: 0px;
+	margin-top: 7px;
 }
 
 .div-author-main-info #icons a{
@@ -483,6 +482,8 @@ button:hover:before {
 }
 
 .div-author-text{
+	letter-spacing: -0.025em;
+	margin-left: 3px;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -490,22 +491,23 @@ button:hover:before {
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 700;
-	margin-top: 25px;
+	margin-top: 26px;
 	margin-bottom: 0px;
 }
 
 .div-author-text #text{
+	line-height: 1.2;
 	font-size: 14px;
 	font-weight: 200;
 	font-style: italic;
 	padding-left: 0px;
-	width: 260px;
+	width: 290px;
 	margin-top: 27px;
 }
 
 .author-signature{
-	margin-top: -25px;
-	margin-left: 120px;
+	margin-top: 25px;
+	margin-left: 135px;
 }
 
 /*end*/
