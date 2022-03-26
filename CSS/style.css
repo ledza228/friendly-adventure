@@ -125,15 +125,15 @@ button:hover:before {
 	width: 100%;
 }
 
-.background_for_bananas ul.ellipse{
-	padding-left: 933px;
-	margin-top: 21px;
-}
 
-.background_for_bananas ul.ellipse li{
-	display: inline;
+.background_for_bananas #dots-under-photo{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 935px;
 	margin-right: 0px;
-	margin-left: 3.8px;
+	padding-top: 25px;
+	width: 75px;
 }
 
 .recipe-preview-parent {
@@ -519,8 +519,8 @@ small divs
 .small-divs{
 	display: flex;
 	flex-direction: row;
-	margin-top: 76px;
-	margin-left: 49px;
+	margin-top: 78px;
+	margin-left: 50px;
 }
 
 .left-small-divs{
@@ -560,6 +560,7 @@ small divs
 	margin-top: 0px;
 	padding-left: 29px;
 	margin-bottom: 10px;
+	letter-spacing: 0.025em;
 }
 
 .chi-chi-div #header hr{
@@ -602,11 +603,10 @@ small divs
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 15px;
 	font-weight: 300;
-	letter-spacing: -0.025em;
+	line-height: 1.2;
 }
 
 .chi-chi-div #icons{
-	margin-top: 4px;
 	font-size: 12px;
 	font-weight: 400;
 	color: #555555;
