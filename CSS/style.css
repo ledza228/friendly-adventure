@@ -130,10 +130,10 @@ button:hover:before {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 935px;
+	margin-left: 936px;
 	margin-right: 0px;
 	padding-top: 25px;
-	width: 75px;
+	width: 77px;
 }
 
 .recipe-preview-parent {
@@ -637,6 +637,7 @@ small divs
 }
 
 .photo-circle{
+	margin: auto;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
@@ -651,6 +652,11 @@ small divs
 	width: 12px;
 	height: 12px;
 	transition: 0.2s;
+}
+
+.circle-wrapper{
+	width: 12px;
+	height: 12px;
 }
 
 .photo-circle:active{
@@ -674,7 +680,7 @@ small divs
 	padding-right: 33px;
 	padding-top: 35px;
 	height: 19px;
-	width: 255px;
+	width: 250px;
 } 
 
 .presentation_line #head #title{
@@ -689,7 +695,7 @@ small divs
 	justify-content: space-around;
 	align-content: space-around;
 	flex-wrap: wrap;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 .presentation_line #head #icons a{
@@ -699,7 +705,7 @@ small divs
 	padding: 0px;
 }
 .presentation_line #head #icons .fa-facebook-f{
-	font-size: 14.3px;
+	font-size: 14px;
 }
 
 .presentation_line #upper-line-hr{
@@ -731,6 +737,10 @@ small divs
 	margin-top: 10px;
 }
 
+.presentation_line_title p{
+	margin-top: 14px;
+}
+
 .presentation_line_title p b{
 	margin-left: 29px;
 	font-family: 'Playfair Display', serif;
@@ -758,7 +768,7 @@ small divs
 }
 
 .presentation_line .content-diagram3{
-	padding-top: 43px;
+	padding-top: 44px;
 }
 
 .presentation_line #image {
@@ -767,8 +777,10 @@ small divs
 
 .presentation_line #image #procent{
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: lighter;
+	padding-top: 5px;
+	letter-spacing: 0.025em;
 }
 
 .presentation_line #image .procent1{
@@ -786,7 +798,7 @@ small divs
 .presentation_line #image .procent3{
 	position: absolute;
 	left: 10px;
-	top: -3px;
+	top: -6px;
 }
 
 .presentation_line #content-diagrams #text{
@@ -852,9 +864,10 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 17px;
+	width: 250px;
+	padding-left: 15px;
 	padding-right: 23px;
-	padding-top: 28px;
+	padding-top: 27px;
 } 
 
 .recipe-mini-div #head #title{
@@ -863,6 +876,9 @@ small divs
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
 
+}
+.recipe-mini-div #head #icons{
+	padding-top: 5px;
 }
 
 .recipe-mini-div #head #icons a{
@@ -880,7 +896,7 @@ small divs
 	width: 251px;
 	border: none;
 	height: 2px;
-	margin-top: 2px;
+	margin-top: 4px;
 	margin-left: 17px;
 	margin-bottom: 0px;
 	opacity: 0.2;
@@ -892,7 +908,7 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 52px;
+	padding-left: 50px;
 	padding-right: 69px;
 
 	font-family: 'Josefin Sans', sans-serif;	
@@ -919,7 +935,7 @@ small divs
 .recipe-mini-div #content-block{
 	display: flex;
 	flex-direction: row;
-	padding-left: 20px;
+	padding-left: 19px;
 	font-family: 'Josefin Sans', sans-serif;
 	letter-spacing: -0.025em;
 
@@ -930,11 +946,11 @@ small divs
 }
 
 .recipe-mini-div .content-block3{
-	padding-top: 37px;
+	padding-top: 39px;
 }
 
 .recipe-mini-div #content-block #text{
-	padding-left: 16px;
+	padding-left: 15px;
 }
 
 .recipe-mini-div #content-block #text p{
@@ -951,11 +967,12 @@ small divs
 }
 
 .recipe-mini-div #content-block #author-text{
-	padding-top: 5px;
+	padding-top: 7px;
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 16px;
 	width: 180px;
+	letter-spacing: -0.04em;
 }
 
 .recipe-mini-div #bottom{
@@ -979,7 +996,7 @@ small divs
 
 .tags_header{
 	padding-top: 26px;
-	padding-left: 17px;
+	padding-left: 15px;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 900;
@@ -997,15 +1014,21 @@ small divs
 }
 
 .middle-small-divs-tags h1{
-	padding-left: 23px;
+	padding-left: 22px;
 	margin-top: 11px;
 	font-size: 12px;
 	font-weight: 300;
 	padding-bottom: 0px;
+	word-spacing: 5px;
 }
 
-.middle-small-divs-tags h1 br{
-	margin-bottom: 13px;
+.middle-small-divs-tags h1{
+	line-height: 1.2;
+}
+
+.middle-small-divs-tags a{
+	color: black;
+	text-decoration: none;
 }
 
 /*Calendar*/
@@ -1019,16 +1042,17 @@ small divs
 
 
 .div-calendar-title{
-	margin-left: 17px;
+	margin-left: 15px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
 	font-weight: 400;
 	font-style: italic;
+	letter-spacing: -0.025em;
 }
 
 .div-calendar-title p {
-	padding-top: 24px;
-	margin-bottom: 4px;
+	padding-top: 28px;
+	margin-bottom: 6px;
 	margin-top: 0px;
 }
 
@@ -1038,7 +1062,7 @@ small divs
 	background-color: #555555;
 	opacity: 0.2;
 	border: none;
-	margin-left: 0px;
+	margin-left: 1px;
 	margin-top: 0px;
 }
 
@@ -1046,9 +1070,9 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 31px;
+	margin-left: 30px;
 	margin-right: 33px;
-	margin-top: 19px;
+	margin-top: 22px;
 }
 
 .div-calendar-month #calendar-angle{
@@ -1064,20 +1088,21 @@ small divs
 	font-size: 18px;
 	font-weight: 300;
 	height: 18px;
+	margin-left: -10px;
 }
 
 
 .div-calendar-table{
-	margin-left: 19px;
+	margin-left: 17px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	width: 222px;
-	margin-top: 11px;
+	margin-top: 6px;
 }
 
 .div-calendar-table table{
-	border-spacing: 14px 20px;
+	border-spacing: 15px 22px;
 }
 
 .div-calendar-table #calendar-months-table{
@@ -1135,8 +1160,9 @@ small divs
 	font-size: 32px;
 	font-weight: 900;
 	color: #921026;
-	padding-top: 20px;
+	padding-top: 19px;
 	margin-top: 0px;
+	letter-spacing: 0.025em;
 }
 
 .popular-now-small-div #title hr{
@@ -1145,16 +1171,17 @@ small divs
 	height: 2px;
 	background-color: #ffffff;	
 	margin-left: 0px;
-	margin-top: 10px;
-	margin-bottom: 23px;
+	margin-top: 8px;
+	margin-bottom: 24px;
 }
 
 .popular-now-small-div #content{
-	padding-left: 17px;
+	padding-left: 16px;
 	font-family: 'Josefin Sans', sans-serif;
 }
 
 .popular-now-small-div #content span{
+	letter-spacing: -0.05em;
 	font-size: 22px;
 	font-weight: 700;
 	color: black;
@@ -1165,10 +1192,11 @@ small divs
 	font-weight: 400;
 	color: #222222;
 	font-style: italic;
-	margin-top: 15px;
+	margin-top: 10px;
 	width: 250px;
-	margin-bottom: 18px;
-	
+	margin-bottom: 15px;
+	letter-spacing: -0.01em;
+	line-height: 1.2;
 }
 
 .popular-now-small-div #bottom{
@@ -1183,7 +1211,7 @@ small divs
 	font-size: 12px;
 	font-weight: 300;
 	color: black;
-	margin-right: 8px;
+	margin-right: 3px;
 }
 
 .popular-now-small-div #bottom #slash{
@@ -1231,9 +1259,9 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 19px;
+	padding-left: 17px;
 	padding-right: 33px;
-	padding-top: 37px;
+	padding-top: 38px;
 } 
 
 .timeline-small-div #head #title{
@@ -1241,6 +1269,7 @@ small divs
 	font-weight: 400;
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
+	letter-spacing: -0.025em;
 
 }
 
@@ -1248,7 +1277,6 @@ small divs
 	font-size: 16px;
 	color: #555555;
 	font-weight: 400;
-
 }
 .timeline-small-div #head #icons .fa-facebook-f{
 	font-size: 14.3px;
@@ -1259,8 +1287,8 @@ small divs
 	width: 251px;
 	border: none;
 	height: 2px;
-	margin-top: 10px;
-	margin-left: 17px;
+	margin-top: 8px;
+	margin-left: 16px;
 	margin-bottom: 0px;
 	opacity: 0.2;
 }
@@ -1270,17 +1298,18 @@ small divs
 	font-size: 20px;
 	font-weight: 900;
 	color: #055555;
-	margin-left: 30px;
-	margin-top: 19px;
+	margin-left: 29px;
+	margin-top: 13px;
 	margin-bottom: 0px;
+	letter-spacing: 0.025em;
 }
 
 .timeline-small-div #colomns{
 	height: 154px;
-	padding-top: 50px;
+	padding-top: 48px;
 	width: 200px;
 
-	transform-origin: 102px 102px;
+	transform-origin: 100px 100px;
 
 	transform: translate(100px,100px);
 	-webkit-transform: rotate(-90deg);
@@ -1303,6 +1332,7 @@ small divs
 	text-transform: uppercase;
 	color:#555555;
 	height: 15px;
+	letter-spacing: 0.025em;
 }
 
 .timeline-small-div #level-name span{
@@ -1316,7 +1346,7 @@ small divs
 	font-size: 14px;
 	font-weight: 300;
 	color: #555555;
-
+	letter-spacing: 0.025em;
 }
 
 .timeline-small-div #easy-colomn{
@@ -1349,7 +1379,7 @@ small divs
 }
 
 .bottom-timeline-div hr{
-	margin-top: 19px;
+	margin-top: 15px;
 	border: none;
 	height: 2px;
 	background-color: #555555;
@@ -1357,7 +1387,9 @@ small divs
 }
 
 .bottom-timeline-div p{
-	margin-top: 13px;
+	line-height: 1.3;
+	margin-top: 12px;
+	margin-left: -1px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
@@ -1869,13 +1901,15 @@ footer #main-string{
 	color: #fefefe;
 }
 
+
 footer #main-string a{
 	color: #fefefe;
 	text-decoration: none;	
 }
 
 footer #main-string a:hover{
-	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+
 }
 
 footer .hrefs {
@@ -1888,7 +1922,7 @@ footer .copyrights{
 	margin-left: 133px;
 }
 
-footer .hrefs a + a{
+footer .hrefs a+a{
 	margin-left: 12px;
 }
 
