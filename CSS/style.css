@@ -1583,7 +1583,7 @@ small divs
 .div-comments-title #title{
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
-	padding-left: 38	px;
+	padding-left: 38px;
 	padding-right: 54px;
 }
 
@@ -1921,9 +1921,9 @@ header{
 	margin-bottom: 86px;
 	width: 1121px;
 	height: 123px;
-	background-color: #FFF;
+	background-color: rgba(248, 248, 248, 1);
 	color: #000;
-	box-shadow: 0px 3px 7px 0px rgba(11,12,12,0.14);
+	box-shadow: 0 0 30px rgba(213, 213, 213, 1);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -1955,9 +1955,9 @@ header{
 .header-hrefs {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	width: 100%;
 	padding-left: 90px;
+	padding-top: 9px;
 }
 
 .header-link{
@@ -1966,6 +1966,7 @@ header{
 	position: relative;
 	display: inline-block;
 	transition: 0.3s;
+	padding-right: 20px;
 }
 
 .header-link:hover{
@@ -1976,7 +1977,7 @@ header{
 	position: absolute;
 	display: none;
 	background-color: #FFF;
-	margin-left: -66%;
+	margin-left: -45%;
 	min-width: 150px;
 	margin-top: 18px;
 	opacity: 0.6;
@@ -2006,18 +2007,26 @@ header{
 }
 
 .header-search-box{
-	margin-left: 50px;
 	border: 1px solid #c1c1c1;
-	margin-right: 90px;
+	margin-right: 95px;
 	display: flex;
 	align-items: center;
+	height: 26px;
+	margin-top: 6px;
 	position: relative;
+	transition: 0.5s;
 }
 
 .header-search-box i{
 	position: absolute;
-	padding-left: 10px;
+	padding-left: 30px;
 	color: #c1c1c1;
+}
+
+
+.header-search-box:focus-within{
+	background-color: #666;
+	color: #dddddd;
 }
 
 header .hrefs a + a{
@@ -2025,8 +2034,8 @@ header .hrefs a + a{
 }
 
 .header-search-input{
-	width: 135px;
-	margin-left: 30px;
+	width: 110px;
+	margin-left: 40px;
 	height: 100%;
 	padding: 0px;
 	padding-left: 10px;
@@ -2036,6 +2045,7 @@ header .hrefs a + a{
 	font-size: 12px;
 	color:#000;
 	text-decoration: none;
+	background-color: rgba(248, 248, 248, 1);
 }
 
 .header-search-input:focus{
