@@ -346,12 +346,14 @@ button:hover:before {
 }
 
 .div-child-404-author {
+	margin-left: 2px;
 	width: 518px;
 	height: 518px;
 	background-color: white;
 }
 
 .div-child-404-author #error-404{
+
 	padding-left: 33px;
 	padding-right: 45px;
 	font-family: 'Josefin Sans', sans-serif;
@@ -361,7 +363,7 @@ button:hover:before {
 	background-color: #dddddd;
 	border: none;
 	height: 2px;
-	margin-top: 5px;
+	margin-top: 6px;
 	margin-bottom: 0px;
 }
 
@@ -369,21 +371,23 @@ button:hover:before {
 /* 404 ERROR DIV*/
 
 #error-404 p{
+	letter-spacing: 0.025em;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 700;
 	padding-left: 11px;
-	margin-top: 19px;
+	margin-top: 21px;
 	margin-bottom: 0;
 }
 
 #error-404-text{
 	text-align: center;
-	padding-top: 155px;
-	padding-left: 5px;
+	padding-top: 162px;
+	padding-left: 10px;
 }
 
 #error-404-text span{
+	letter-spacing: -0.025em;
 	font-size: 34px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 600;
@@ -395,13 +399,15 @@ button:hover:before {
 	color: rgb(169,169,169, 0.66);
 	font-size: 16px;
 	font-weight: 900;
-	margin-top: 0px;
+	letter-spacing: 0.025em;
+	line-height: 1.2;
+	margin-top: 8px;
 	margin-bottom: 0px;
 }
 
 #error-404-text #smile{
 	font-size: 33px;
-	transform: rotate(75deg) translate(-2px, -10px);
+	transform: rotate(75deg) translate(-3px, -7px);
 }
 
 #error-404-text #smile span{
@@ -411,29 +417,11 @@ button:hover:before {
 
 
 .div-404-button{
-	padding-top: 37px;
+	padding-top: 35px;
 	margin-top: 60px;
 	text-align: center;
 }
 
-.div-404-button button{
-	background-color: rgb(250,251,250);
-	width: 103px;
-	height: 26px;
-	border: solid #c1c1c1 1px;
-		
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 12px;
-	font-weight: 300;
-}
-
-.div-404-button button:hover{
-    	background-color: #555555;
-}
-
-.div-404-button button:active{
-    	font-size: 11px;
-}
 
 .author-main-block{
 	display: flex;
