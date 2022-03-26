@@ -49,7 +49,7 @@ body{
 
 .background_for_bananas{
 	background-color: rgba(239, 238, 238, 1);
-	height: 449px;
+	height: 440px;
 	box-shadow: 0 0 30px rgba(213, 213, 213, 1);
 	padding-left: 91px;
 	
@@ -65,31 +65,31 @@ body{
 }
 
 .background_for_bananas h1{
-	margin-top: 35px;
+	margin-top: 22px;
 	color: rgba(146, 16, 38, 1);
 	font-size: 32px;
-	font-weight:lighter;
-}
-
-.background_for_bananas h1{
-	margin: top 28px;   
+	font-weight: lighter;
 	font-family: 'Playfair Display', serif;
-	font-weight: 400;
-	font-size: 24px;
-	margin-left: -2px;    
+	font-size: 25px;
 }
 
-.background_for_bananas h2{
+.background_for_bananas div p {
 	font-family: 'Josefin Sans', serif;
+	width: 335px;	
+	margin-top: 24px;
+	margin-left: 1px;
 	font-weight: 100;
-	font-size: 16px;
-	font-weight:lighter;
-	margin-bottom: 27px;
+	font-size: 15.2px;
+	line-height: 1.25;
+	font-weight:300;
+	margin-bottom: 0px;
 }
 
 .background_for_bananas button{
-	width: 107px;
-	height: 30px;
+	width: 99px;
+	height: 25px;
+	margin-top: -1px;
+	margin-left: 5px;
 	border: none;
 	border-radius: 0px;
 	background-color: rgba(248, 248, 248, 1);
@@ -126,14 +126,14 @@ button:hover:before {
 }
 
 .background_for_bananas ul.ellipse{
-	padding-left: 910px;
-	margin-top: 20px;
+	padding-left: 933px;
+	margin-top: 21px;
 }
 
 .background_for_bananas ul.ellipse li{
 	display: inline;
 	margin-right: 0px;
-	margin-left: 7px;
+	margin-left: 3.8px;
 }
 
 .recipe-preview-parent {
@@ -669,23 +669,15 @@ small divs
 	background-color: white;
 }
 
-.presentation_line_header{
-	padding-top: 36px;
-	padding-left: 17px;
-	height: 17px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
-	font-style: italic;
-	font-weight: 900;
-}
-
 .presentation_line #head{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 19px;
+	padding-left: 16px;
 	padding-right: 33px;
-	padding-top: 36px;
+	padding-top: 35px;
+	height: 19px;
+	width: 255px;
 } 
 
 .presentation_line #head #title{
@@ -693,14 +685,21 @@ small divs
 	font-weight: 400;
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
+}
 
+.presentation_line #head #icons{
+	display: flex;
+	justify-content: space-around;
+	align-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 10px;
 }
 
 .presentation_line #head #icons a{
-	font-size: 16px;
+	font-size: 15px;
 	color: #555555;
-	font-weight: 400;
-
+	display:inline-block;
+	padding: 0px;
 }
 .presentation_line #head #icons .fa-facebook-f{
 	font-size: 14.3px;
@@ -721,7 +720,7 @@ small divs
 	margin-right: 80px;
 }
 
-.presentation_line_header iz{
+.presentation_line_header i{
 	margin-right: 6px;
 }
 
@@ -735,149 +734,114 @@ small divs
 	margin-top: 10px;
 }
 
-.presentation_line_title p{
-	margin-left: 28px;
+.presentation_line_title p b{
+	margin-left: 29px;
 	font-family: 'Playfair Display', serif;
-	font-size: 20px;
+	font-size: 21px;
 	font-weight: 168px;
 	color: #055555;
 	margin-bottom: 0px;
 }
 
-.present_line_diagrams{
-	width: 216px;
-	height: 275px;
-
-	margin-top: 40px;
-	margin-left: 24px;	
+.presentation_line #pre_lin_content{
+	padding-top: 18px;
+	padding-left: 3px;
 }
 
-.first_diagram{
-	width: 203px;
-	height: 59px;
-	margin-bottom: 0px;
-}
-
-.first_diagram_procent{
-	position: absolute;
-	padding-left: 15px;
-	padding-top: 17px;
+.presentation_line #content-diagrams{
+	display: flex;
+	flex-direction: row;
+	padding-left: 20px;
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
-	font-style: italic;
+	letter-spacing: -0.025em;
 }
 
-.first_diagram_information{
-	position: absolute;
-	
+.presentation_line .content-diagram2{
+	padding-top: 44px;
 }
 
-.first_diagram h1{
-	padding-left: 84px;
-	margin-top: 1px;
-	margin-bottom: 0px;
+.presentation_line .content-diagram3{
+	padding-top: 43px;
+}
+
+.presentation_line #image {
+	position: relative;
+}
+
+.presentation_line #image #procent{
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 18px;
-
+	font-size: 24px;
 	font-weight: lighter;
 }
 
-.first_diagram h2{
-	padding-left: 84px;
-	padding-top: 9px;
-	margin-top: 1px;
-	font-family: 'Josefin Sans', sans-serif;
+.presentation_line #image .procent1{
+	position: absolute;
+	left: 14px;
+	top: 3px;
+}
+
+.presentation_line #image .procent2{
+	position: absolute;
+	left: 12px;
+	top: 0px;
+}
+
+.presentation_line #image .procent3{
+	position: absolute;
+	left: 10px;
+	top: -3px;
+}
+
+.presentation_line #content-diagrams #text{
+	padding-left: 25px;
+	padding-top: 2px;
+}
+
+.presentation_line #pre_lin_content #content-diagrams #text p{
+	margin: 0 0 0 0;
+}
+
+.presentation_line #pre_lin_content #content-diagrams #title{
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.presentation_line #pre_lin_content #content-diagrams #topic-text{
+	padding-top: 5px;
 	font-size: 14px;
 	font-style: italic;
-}
-
-.present_line_diagrams .first_diagram .red_diagram{
-	margin-left: -35px;
-}
-
-.second_diagram{
-	width: 216px;
-	height: 71px;
-	margin-top: 46px;
-}
-
-.second_diagram_procent{
-	position: absolute;
-	padding-left: 15px;
-	padding-top: 17px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
-	font-style: italic;
-}
-
-.second_diagram_information{
-	position: absolute;
-}
-
-.second_diagram h1{
-	padding-left: 84px;
-	margin-top: 1px;
-	margin-bottom: 0px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 18px;
-
 	font-weight: lighter;
+	line-height: 16px;
+	width: 180px;
+}			
+
+.first_diagram #image{
+	position: relative;
 }
 
-.second_diagram h2{
-	padding-left: 84px;
-	padding-top: 6px;
-	margin-top: 1px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 14px;
-	font-style: italic;
-}
-
-.present_line_diagrams .second_diagram .green_diagram{
-	margin-left: -58px;
-}
-
-.third_diagram{
-	width: 216px;
-	height: 71px;
-	margin-top: 46px;
-}
-
-.third_diagram_procent{
+#content-diagrams .red_diagram{
 	position: absolute;
-	padding-left: 15px;
-	padding-top: 17px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 20px;
-	font-style: italic;
+	top: 4.2px;
+	left: 30px;
 }
 
-.third_diagram_information{
+#content-diagrams .green_diagram{
 	position: absolute;
+	top: 0px;
+	left: 7px;
 }
 
-.third_diagram h1{
-	padding-left: 84px;
-	margin-top: 1px;
-	margin-bottom: 0px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 18px;
-
-	font-weight: lighter;
+#content-diagrams .light_green_diagram{
+	position: absolute;
+	top: 22px;
+	left: 0px;
 }
 
-.third_diagram h2{
-	padding-left: 84px;
-	padding-top: 6px;
-	margin-top: 1px;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 14px;
-	font-style: italic;
+#content-diagrams .third_circle{
+	margin-top: -8px;
 }
 
-.present_line_diagrams .third_diagram .light_green_diagram{
-	margin-left: -64px;
-}
+
 
 /*Recipe*/
 
@@ -1619,7 +1583,7 @@ small divs
 .div-comments-title #title{
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
-	padding-left: 38px;
+	padding-left: 38	px;
 	padding-right: 54px;
 }
 
@@ -1734,13 +1698,14 @@ small divs
 */	
 
 .div-post-comments{
-	margin-top: 140px;
-	display: flex;
+	margin-top: 157px;
+	margin-left: 0px;
+	margin-left: 131px;
 	justify-content: space-around;
 }
 
 .div-comments-post{
-	height: 188px;
+	height: 187px;
 	background-color: white;
 	width: 838px;
 }
@@ -1749,7 +1714,7 @@ small divs
 	padding-top:  23px;
 	padding-left: 39px;
 	margin: 0px;
-	font-size: 24px;
+	font-size: 23px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
 	margin-bottom: 0px;
@@ -1769,7 +1734,7 @@ small divs
 	text-decoration: none;
 	color: #666;
 	margin-right: 12px;
-	margin-left: 12px;
+	margin-left: 1px;
 	margin-bottom: 0px;
 }
 
@@ -1805,12 +1770,12 @@ small divs
 	background: white;
 	border: #dfdfdf 1px solid;
 	margin:0;
-	margin-right: 2px;
+	margin-right: 4px;
 	padding:0;
 	margin-top: 11px;
 	display:inline-block;
-	width: 498px;
-	height: 41px;
+	width: 495px;
+	height: 37px;
 	transition: 0.3s;
 }
   
@@ -1823,8 +1788,8 @@ small divs
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: lighter;
 	border: black 1px solid;
-	height: 41px;
-	width: 89px;
+	height: 39px;
+	width: 85px;
 	margin:0;
 	padding:0;
 	margin-top: 11px;
@@ -1956,9 +1921,9 @@ header{
 	margin-bottom: 86px;
 	width: 1121px;
 	height: 123px;
-	background-color: rgba(248, 248, 248, 1);
+	background-color: #FFF;
 	color: #000;
-	box-shadow: 0 0 30px rgba(213, 213, 213, 1);
+	box-shadow: 0px 3px 7px 0px rgba(11,12,12,0.14);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -1990,11 +1955,10 @@ header{
 .header-hrefs {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	padding-left: 90px;
-	padding-top: 9px;
 }
-
 
 .header-link{
 	color: #000;
@@ -2002,7 +1966,6 @@ header{
 	position: relative;
 	display: inline-block;
 	transition: 0.3s;
-	padding-right: 20px;
 }
 
 .header-link:hover{
@@ -2013,7 +1976,7 @@ header{
 	position: absolute;
 	display: none;
 	background-color: #FFF;
-	margin-left: -45%;
+	margin-left: -66%;
 	min-width: 150px;
 	margin-top: 18px;
 	opacity: 0.6;
@@ -2043,25 +2006,18 @@ header{
 }
 
 .header-search-box{
+	margin-left: 50px;
 	border: 1px solid #c1c1c1;
-	margin-right: 95px;
+	margin-right: 90px;
 	display: flex;
 	align-items: center;
-	height: 26px;
-	margin-top: 6px;
 	position: relative;
-	transition: 0.5s;
 }
 
 .header-search-box i{
 	position: absolute;
-	padding-left: 30px;
+	padding-left: 10px;
 	color: #c1c1c1;
-}
-
-.header-search-box:focus-within{
-	background-color: #666;
-	color: #dddddd;
 }
 
 header .hrefs a + a{
@@ -2069,8 +2025,8 @@ header .hrefs a + a{
 }
 
 .header-search-input{
-	width: 110px;
-	margin-left: 40px;
+	width: 135px;
+	margin-left: 30px;
 	height: 100%;
 	padding: 0px;
 	padding-left: 10px;
@@ -2080,7 +2036,6 @@ header .hrefs a + a{
 	font-size: 12px;
 	color:#000;
 	text-decoration: none;
-	background-color: rgba(248, 248, 248, 1);
 }
 
 .header-search-input:focus{
