@@ -433,6 +433,11 @@ body{
 .div-author-main-info #icons a{
     font-size: 16px;
     color: rgb(85,85,85, 0.33);
+	transition: 0.2s;
+}
+
+.div-author-main-info #icons a:hover{
+	color:rgba(146, 16, 38, 1);
 }
 
 .div-author-main-info hr{
@@ -845,8 +850,16 @@ small divs
 	font-size: 16px;
 	color: #555555;
 	font-weight: 400;
-
 }
+
+#head #icons a{
+	transition: .2s;
+}
+
+#head #icons a:hover{
+	color:rgba(146, 16, 38, 1);
+}
+
 .recipe-mini-div #head #icons .fa-facebook-f{
 	font-size: 14.3px;
 }
