@@ -295,6 +295,19 @@ body{
 	letter-spacing: -0.02em;
 }
 
+div#recipe-text::-webkit-scrollbar-thumb {
+    background: #555555;
+	height: 20px;
+	padding-left: 20px;
+	border-radius: 50%;
+}
+
+div#recipe-text::-webkit-scrollbar {
+    width: 2px;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+
 /* 404 and author divs */
 
 .div-404-author {
