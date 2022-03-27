@@ -52,7 +52,7 @@
 					<br>cake.
 				<p>
 			</div>
-			<button>GET IT RECIPE</button>
+			<button class="common-button">GET IT RECIPE</button>
 
 			<div id="dots-under-photo">
 				<div class="circle-wrapper"><div class="photo-circle"></div></div>
@@ -512,7 +512,7 @@
                     </div>
                     
                     <div class="div-authentication-form-bottom">
-                        <div class="div-authentication-button div-authentication-form-checkbox-text">LOGIN</div>
+						<div class="div-authentication-button div-authentication-form-checkbox-text"><button class="common-button">LOGIN</button></div>
                         <div class="div-authentication-socials">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&nbsp&nbsp&nbsp
                             <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -527,13 +527,14 @@
                     </div>
                     <p class="div-authentication-form-description">Sign in for LEMON</p>
 
-                    <input class="div-authentication-form-input" type="text" id="username" placeholder="email"><br>
-                    <input class="div-authentication-form-input" type="text" id="username" placeholder="user name"><br>
-                    <input class="div-authentication-form-input" type="text" id="username" placeholder="password"><br>
-                    <input class="div-authentication-form-input" type="text" id="username" placeholder="repeat password"><br>
+                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="email"><br>
+                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="user name"><br>
+                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="password"><br>
+                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="repeat password"><br>
                     
                     <div class="div-authentication-form-bottom">
-                         <div class="div-authentication-button div-authentication-form-checkbox-text">SIGN UP</div>
+                         <div class="div-authentication-button div-authentication-form-checkbox-text"><button class="common-button">SIGN UP</button></div>
+						 
                          <div class="div-authentication-socials">
                               <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&nbsp&nbsp&nbsp
                               <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -548,7 +549,7 @@
 		<div class="div-post-comments">
 			<div class="div-comments-post">
 				<h1>Post a Comment
-					<p><a href="https://www.facebook.com/">Facebook</a>|<a href="https://twitter.com/">Twitter</a></p>
+					<p><a href="https://www.facebook.com/">Facebook</a>|&nbsp&nbsp<a href="https://twitter.com/">Twitter</a></p>
 				</h1>
 				<div class="form_for_comment">
 					<form>
@@ -560,7 +561,6 @@
 			</div>
 		</div>
 		
-		<div class="div-authentication"> 
 			<div class="div-comments" id="comments">
 				<div class="div-comments-title">
 					<div id="title">
@@ -568,7 +568,7 @@
 					</div>
 				</div>
 				<div class="div-comments-block">
-					<div class="div-comments-comment">
+					<div class="div-comments-comment first-comment">
 						<hr>
 						<div class="div-comments-panel">
 							<img src="Photo/lico_predstavili.png">
@@ -605,6 +605,9 @@
 						<div class="div-comments-text">
 							<div class="recipe-preview-image">
 								<img src="Photo/rediska.png">
+								<div class="sticker-img">
+									<i class="fa fa-pinterest"></i>
+								</div>
 						   	</div>
 							<div>
 								Thanks for the recipe!
@@ -648,6 +651,9 @@
 						<div class="div-comments-text">
 							<div>
 								Thanks for the recipe lorem ipsum bla bla bla  Thanks for the recipe lore
+							</div>
+							<div class="div-comments-text-more">
+								<a href="#">24 more comments</a>
 							</div>
 						</div>
 					</div>
@@ -693,9 +699,7 @@
 					</div>
 					<hr>
 				</div>
-				<hr>
 			</div>
-		</div>
 
 		<div class="page-selection">
 			<div id="flex-selection">
@@ -705,6 +709,7 @@
 				<div id="number"><a href="#">3</a></div>
 				<div id="number"><a href="#">4</a></div>
 				<div id="number"><a href="#">5</a></div>
+				<div id="number"><a href="#">6</a></div>
 				<div id="number"><a href="#">&#x3E;</a></div>
 			</div>
 		</div>
