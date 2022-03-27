@@ -140,7 +140,7 @@ body{
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
 	transition: 0.3s linear;
-	border: 0px solid #FFF;
+	border: 2px solid #FFF;
 	padding-top: 10px;
 	padding-left: -1px;
 	letter-spacing: -0.025em;
@@ -154,7 +154,7 @@ body{
 	font-weight: lighter !important;
 	font-style: normal;
 	transition: 0.3s linear;
-	border: 0px solid #FFF;
+	border: 2px solid #FFF;
 	border-radius: 10px;
 	padding-top: 4px;
 	letter-spacing: -0.025em;
