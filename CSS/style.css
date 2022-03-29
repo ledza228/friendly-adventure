@@ -61,7 +61,7 @@ body{
 }
 
 .background_for_bananas a img{
-    	padding-top: 51px;
+    padding-top: 51px;
 }
 
 .background_for_bananas h1{
@@ -73,12 +73,11 @@ body{
 	font-size: 25px;
 }
 
-.background_for_bananas div p {
+.background_for_bananas p {
 	font-family: 'Josefin Sans', serif;
-	width: 335px;	
+	width: 320px;	
 	margin-top: 24px;
 	margin-left: 1px;
-	font-weight: 100;
 	font-size: 15.2px;
 	line-height: 1.25;
 	font-weight:300;
@@ -90,10 +89,10 @@ body{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 936px;
 	margin-right: 0px;
 	padding-top: 25px;
 	width: 77px;
+	padding-left: 936px;
 }
 
 .recipe-preview-parent {
@@ -632,11 +631,6 @@ small divs
 	transition: 0.2s;
 }
 
-.circle-wrapper{
-	width: 12px;
-	height: 12px;
-}
-
 .photo-circle:active{
 	background-color: #555555;
 }
@@ -753,7 +747,7 @@ small divs
 	position: relative;
 }
 
-.presentation_line #image #procent{
+.presentation_line #image span{
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
 	font-weight: lighter;
@@ -764,19 +758,19 @@ small divs
 .presentation_line #image .procent1{
 	position: absolute;
 	left: 14px;
-	top: 3px;
+	top: 14px;
 }
 
 .presentation_line #image .procent2{
 	position: absolute;
 	left: 12px;
-	top: 0px;
+	top: 14px;
 }
 
 .presentation_line #image .procent3{
 	position: absolute;
 	left: 10px;
-	top: -6px;
+	top: 8px;
 }
 
 .presentation_line #content-diagrams #text{
@@ -799,7 +793,7 @@ small divs
 	font-style: italic;
 	font-weight: lighter;
 	line-height: 16px;
-	width: 180px;
+	width: 140px;
 }			
 
 .first_diagram #image{
@@ -985,11 +979,11 @@ small divs
 	padding-left: 15px;
 	font-size: 20px;
 	font-style: italic;
-	font-weight: 900;
-	margin-bottom: 0px;
+	font-weight: lighter;
+	margin-bottom: 10px;
 }
 
-.tags_header hr{
+.tags_header #line{
 	width: 252px;
 	height: 2px;
 	background-color: #555555;
@@ -999,23 +993,26 @@ small divs
 	margin-top: 5px;
 }
 
-.middle-small-divs-tags h1{
+
+.middle-small-divs-tags a{
+	display: flex;
+	justify-content: space-between;
+	width: 237px;
 	padding-left: 22px;
-	margin-top: 11px;
 	font-size: 12px;
 	font-weight: 300;
-	padding-bottom: 0px;
-	word-spacing: 5px;
+	line-height: 2;
 }
 
-.middle-small-divs-tags h1{
-	line-height: 1.2;
+.middle-small-divs-tags .last_line_tags{
+	width: 200px;
 }
 
 .middle-small-divs-tags a{
 	color: black;
 	text-decoration: none;
 }
+
 
 /*Calendar*/
 
@@ -2033,11 +2030,8 @@ header{
 	text-decoration: none;	
 }
 
-.header-logo{
+.header-content img{
 	margin-left: 95px;
-}
-
-.header-logo img{
 	width: 88px;
 	height: 36px;
 }
