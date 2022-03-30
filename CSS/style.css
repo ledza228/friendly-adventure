@@ -285,76 +285,78 @@ div#recipe-text::-webkit-scrollbar {
 	background-color: white;
 }
 
-.div-child-404-author #error-404{
 
-	padding-left: 33px;
-	padding-right: 45px;
+.div-404{
+	background-image: url(/Photo/404.png);
+}
+
+.div-child-404-author #block-title{
+	display: inline-block;
 	font-family: 'Josefin Sans', sans-serif;
-}
+	font-size: 20px;
+	font-weight: 400;
+	font-style: italic;
 
-.div-child-404-author hr{
-	background-color: #dddddd;
-	border: none;
-	height: 2px;
-	margin-top: 6px;
-	margin-bottom: 0px;
+	margin-left: 33px;
+	padding-left: 11px;
+	padding-bottom: 11px;
+	margin-top: 25px;
+	width: 440px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
-
 
 /* 404 ERROR DIV*/
 
-#error-404 p{
-	letter-spacing: -0.025em;
-	font-size: 20px;
-	font-style: italic;
-	font-weight: 700;
-	padding-left: 10px;
-	margin-top: 21px;
-	margin-bottom: 0;
-}
 
-#error-404-text{
-	text-align: center;
-	padding-top: 162px;
-	padding-left: 10px;
-}
-
-#error-404-text span{
-	letter-spacing: -0.025em;
-	font-size: 34px;
+.div-404 #error-sorry{
+	display: block;
+	margin-left: 225px;
+	padding-top: 160px;
+	
 	font-family: 'Josefin Sans', sans-serif;
-	font-weight: 600;
-	color: black;
-}
-
-#error-404-text p{
-	font-family: 'Playfair Display', serif;
-	color: rgb(169,169,169, 0.66);
-	font-size: 16px;
-	font-weight: 900;
-	letter-spacing: 0.025em;
+	font-size: 34px;
 	line-height: 1.2;
-	margin-top: 8px;
-	margin-bottom: 0px;
+	font-weight: 700;
 }
 
-#error-404-text #smile{
+.div-404 #error-description{
+	display: block;
+	margin-left: 200px;
+	width: 135px;
+
+	font-family: 'Playfair Display', serif;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 900;
+	color: #a9a9a9;
+	text-align: center;
+}
+
+
+.div-404 #smile{
 	font-size: 33px;
-	transform: rotate(75deg) translate(-3px, -7px);
+	font-family: 'Playfair Display', serif;
+	font-weight: 900;
+	color: #a9a9a9;
+
+	margin-left: 250px;
+	transform: rotate(75deg) translate(90px, 110px);
 }
 
-#error-404-text #smile span{
+.div-404 #smile span{
 	font-weight: 400;
-	color: rgb(169,169,169, 0.66);
 }
 
 
 .div-404-button{
-	padding-top: 35px;
-	margin-top: 60px;
+	margin-left: 210px;
+	margin-top: 95px;
 	text-align: center;
 }
 
+/*
+	author
+*/
 
 .author-main-block{
 	display: flex;
