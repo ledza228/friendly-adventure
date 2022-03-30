@@ -299,7 +299,7 @@ div#recipe-text::-webkit-scrollbar {
 
 	margin-left: 33px;
 	padding-left: 11px;
-	padding-bottom: 11px;
+	padding-bottom: 5px;
 	margin-top: 25px;
 	width: 440px;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
@@ -360,39 +360,38 @@ div#recipe-text::-webkit-scrollbar {
 
 .author-main-block{
 	display: flex;
-	flex-direction: row;
 }
 
-.author-main-block #img{
-    	width: 170px;
-}
-
-.author-main-block #img img{
+.author-main-block #face-img{
 	border-radius: 50%;
 	width: 130px;
 	height: 130px;
 	margin-left: 30px;    
-	margin-top: 23px;
+}
+
+.div-content-author{
+	margin-left: 20px;
 }
 
 .author-main-block #text{
-	width: 348px;
-	padding-left: 12px;
+	width: 290px;
+	padding-left: 19px;
 }
 
-.div-author-main-info{
+.author-main-block{
     padding-top: 39px;
 	letter-spacing: -0.025em;
 }
 
-.div-author-main-info span {
+.author-main-block #name {
+	display: block;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
 	letter-spacing: -0.05em;
 }
 
-.div-author-main-info #country{
+.author-main-block #country{
 	margin-top: 8px;
 	margin-bottom: 0px;
 	margin-left: 2px;
@@ -401,48 +400,45 @@ div#recipe-text::-webkit-scrollbar {
 	font-weight: 300;
 }
 
-.div-author-main-info #icons{
+.author-main-block #icons{
 	margin-top: 7px;
+	display: block;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
+	padding-bottom: 18px;
 }
 
-.div-author-main-info #icons a{
+.author-main-block #icons a{
     font-size: 16px;
     color: rgb(85,85,85, 0.33);
 	transition: 0.2s;
 }
 
-.div-author-main-info #icons a:hover{
+.author-main-block #icons a:hover{
 	color:rgba(146, 16, 38, 1);
 }
 
-.div-author-main-info hr{
-	width: 291px;
-	margin-left: 0px;
-	margin-top: 10px;
-}
-
-.div-author-text{
+.div-content-author #title, .div-content-author p{
 	letter-spacing: -0.025em;
 	margin-left: 3px;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.div-author-text #title{
+.div-content-author #title {
+	display: block;
+	margin-top: 20px;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 700;
-	margin-top: 26px;
-	margin-bottom: 0px;
 }
 
-.div-author-text #text{
+.div-content-author p{
 	line-height: 1.2;
 	font-size: 14px;
 	font-weight: 200;
 	font-style: italic;
 	padding-left: 0px;
 	width: 290px;
-	margin-top: 27px;
+	margin-top: 25px;
 }
 
 .author-signature{
