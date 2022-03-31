@@ -48,6 +48,8 @@ body{
 }
 
 .background_for_bananas{
+
+	background-image: url(../Photo/back_view.png);
 	background-color: rgba(239, 238, 238, 1);
 	height: 440px;
 	box-shadow: 0 0 30px rgba(213, 213, 213, 1);
@@ -1061,7 +1063,7 @@ small divs
 .popular-now-small-div{
 	width: 290px;
 	height: 349px;
-	background:url("/Photo/cup.png");
+	background:url(../Photo/cup.png);
 }
 
 .popular-now-small-div #title{
