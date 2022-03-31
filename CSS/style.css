@@ -790,9 +790,11 @@ small divs
 	flex-direction: row;
 	justify-content: space-between;
 	width: 250px;
-	padding-left: 15px;
-	padding-right: 23px;
+	margin-left: 15px;
+	margin-right: 23px;
 	padding-top: 27px;
+	padding-bottom: 5px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 } 
 
 .recipe-mini-div #head #title{
@@ -824,17 +826,6 @@ small divs
 	font-size: 14.3px;
 }
 
-.recipe-mini-div #upper-line-hr{
-	background-color: #555555;
-	width: 251px;
-	border: none;
-	height: 2px;
-	margin-top: 4px;
-	margin-left: 17px;
-	margin-bottom: 0px;
-	opacity: 0.2;
-}
-
 .recipe-mini-div #level-title{
 	height: 12px;
 	padding-top: 15px;
@@ -852,11 +843,11 @@ small divs
 	letter-spacing: -0.025em;
 }
 
-.recipe-mini-div #level-title span{
+.recipe-mini-div #level-title #current-level{
 	font-weight: 700;
 }
 
-.recipe-mini-div #level-title div:hover{
+.recipe-mini-div #level-title span:hover{
 	font-weight: 700;
 	text-decoration: underline;
 }
@@ -871,15 +862,14 @@ small divs
 	padding-left: 19px;
 	font-family: 'Josefin Sans', sans-serif;
 	letter-spacing: -0.025em;
-
 }
 
 .recipe-mini-div .content-block2{
-	padding-top: 34px;
+	padding-top: 35px;
 }
 
 .recipe-mini-div .content-block3{
-	padding-top: 39px;
+	padding-top: 35px;
 }
 
 .recipe-mini-div #content-block #text{
@@ -895,8 +885,14 @@ small divs
 	font-weight: 300;
 }
 
-.recipe-mini-div #content-block #author span{
+.recipe-mini-div #content-block #author b{
 	font-weight: 700;
+}
+
+
+.recipe-mini-div img{
+	width: 49px;
+	height: 45px;
 }
 
 .recipe-mini-div #content-block #author-text{
@@ -908,8 +904,8 @@ small divs
 	letter-spacing: -0.04em;
 }
 
-.recipe-mini-div #bottom{
-	margin-top: 29px;
+.recipe-mini-div button{
+	margin-top: 20px;
 	margin-left: 164px;
 }
 
