@@ -287,7 +287,7 @@ div#recipe-text::-webkit-scrollbar {
 
 
 .div-404{
-	background-image:url(../../Photo/404.png);
+	background-image:url(../Photo/404.png);
 }
 
 .div-child-404-author #block-title{
@@ -1241,10 +1241,6 @@ small divs
 	letter-spacing: 0.025em;
 }
 
-.timeline-small-div #level-name span{
-	position: absolute;
-}
-
 .timeline-small-div #colomn-line{
 	display: flex;
 	flex-direction: row;
@@ -1286,10 +1282,10 @@ small divs
 	border-top: solid rgba(85,85,85,0.2) 2px;
 }
 
-.bottom-timeline-div p{
+.bottom-timeline-div{
 	line-height: 1.3;
-	margin-top: 12px;
-	margin-left: -1px;
+	padding-top: 12px;
+
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
