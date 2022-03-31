@@ -1061,33 +1061,24 @@ small divs
 .popular-now-small-div{
 	width: 290px;
 	height: 349px;
-	background-color: #988f8f;
+	background:url("/Photo/cup.png");
 }
 
 .popular-now-small-div #title{
-	padding-left: 17px;
-}
-
-.popular-now-small-div #title p{
+	display: block;
+	margin-left: 17px;
 	font-family: 'Playfair Display', serif;
 	font-size: 32px;
 	font-weight: 900;
 	color: #921026;
 	padding-top: 19px;
-	margin-top: 0px;
 	letter-spacing: 0.025em;
-}
+	padding-bottom: 8px;
 
-.popular-now-small-div #title hr{
-	width: 251px;
-	border: none;
-	height: 2px;
-	background-color: #ffffff;	
-	margin-left: 0px;
-	margin-top: 8px;
+	width: 250px;
+	border-bottom: solid rgb(255,255,255) 2px;
 	margin-bottom: 24px;
 }
-
 .popular-now-small-div #content{
 	padding-left: 16px;
 	font-family: 'Josefin Sans', sans-serif;
@@ -1114,6 +1105,7 @@ small divs
 
 .popular-now-small-div #bottom{
 	padding-left: 18px;
+	display: flex;
 }
 
 .popular-now-small-div #bottom button{
@@ -1127,6 +1119,14 @@ small divs
 	margin-right: 3px;
 }
 
+.popular-now-small-div #bottom-text{
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	color: #555555;
+	font-weight: 400;
+	margin-left: 5px;
+}
+
 .popular-now-small-div #bottom #slash{
 	width: 1px;
 	height: 14px;
@@ -1134,7 +1134,7 @@ small divs
 	font-size: 14px;
 }
 
-.popular-now-small-div #bottom span{
+.popular-now-small-div #bottom b{
 	font-size: 12px;
 	font-family: 'Open Sans', sans-serif;
 	color: #555555;
