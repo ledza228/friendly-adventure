@@ -1172,9 +1172,13 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 17px;
-	padding-right: 33px;
+	margin-left: 17px;
+	margin-right: 33px;
 	padding-top: 38px;
+	padding-bottom: 8px;
+	width: 250px;
+
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 } 
 
 .timeline-small-div #head #title{
@@ -1193,17 +1197,6 @@ small divs
 }
 .timeline-small-div #head #icons .fa-facebook-f{
 	font-size: 14.3px;
-}
-
-.timeline-small-div #upper-line-hr{
-	background-color: #555555;
-	width: 251px;
-	border: none;
-	height: 2px;
-	margin-top: 8px;
-	margin-left: 16px;
-	margin-bottom: 0px;
-	opacity: 0.2;
 }
 
 .timeline-small-div #title-colomns{
@@ -1289,14 +1282,8 @@ small divs
 .bottom-timeline-div{
 	margin-left: 50px;
 	width: 203px;
-}
-
-.bottom-timeline-div hr{
 	margin-top: 15px;
-	border: none;
-	height: 2px;
-	background-color: #555555;
-	opacity: 0.2;
+	border-top: solid rgba(85,85,85,0.2) 2px;
 }
 
 .bottom-timeline-div p{
