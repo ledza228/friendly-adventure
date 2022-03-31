@@ -966,28 +966,18 @@ small divs
 
 
 .div-calendar-title{
+	display: block;
 	margin-left: 15px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
 	font-weight: 400;
 	font-style: italic;
 	letter-spacing: -0.025em;
-}
 
-.div-calendar-title p {
-	padding-top: 28px;
-	margin-bottom: 6px;
-	margin-top: 0px;
-}
-
-.div-calendar-title hr{
 	width: 252px;
-	height: 2px;
-	background-color: #555555;
-	opacity: 0.2;
-	border: none;
-	margin-left: 1px;
-	margin-top: 0px;
+	padding-top: 28px;
+	padding-bottom: 6px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
 .div-calendar-month{
@@ -999,11 +989,10 @@ small divs
 	margin-top: 22px;
 }
 
-.div-calendar-month #calendar-angle{
+.div-calendar-month .fa{
 	height: 15px;
 	width: 10px;
 	font-size: 14px;
-	font-weight: 400;
 	color: #555555;
 }
 
@@ -1039,11 +1028,11 @@ small divs
 	opacity: 0.62;
 }
 
-.div-calendar-month #calendar-angle:hover{
+.div-calendar-month .fa:hover{
 	font-size: 17px;
 }
 
-.div-calendar-month #calendar-angle:active{
+.div-calendar-month .fa:active{
 	font-size: 15px;
 }
 
