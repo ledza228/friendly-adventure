@@ -94,7 +94,7 @@ body{
 	margin-right: 0px;
 	padding-top: 25px;
 	width: 77px;
-	padding-left: 936px;
+	padding-left: 935px;
 }
 
 .recipe-preview-parent {
@@ -593,7 +593,6 @@ small divs
 /* Target */
 
 .left-small-divs .presentation_line{
-	margin: 0px;
 	width: 290px;
 	height: 471px;
 	background-color: white;
@@ -603,11 +602,12 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding-left: 16px;
-	padding-right: 33px;
-	padding-top: 35px;
-	height: 19px;
+	margin-left: 16px;
+	margin-right: 0px;
+	padding-bottom: 5px;
+	padding-top: 35px;	
 	width: 250px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 } 
 
 .presentation_line #head #title{
@@ -665,6 +665,7 @@ small divs
 }
 
 .presentation_line_title p{
+
 	margin-top: 14px;
 }
 
@@ -1320,28 +1321,23 @@ small divs
 
 .div-authentication-form #title{
 	padding-left: 11px;
+	margin-left: 30px;
+	margin-right: 30px;
 	margin-top: 19px;
 	margin-bottom: 0;
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
-	padding-left: 25px;
+	padding-left: 0px;
 	padding-right: 32px;
-}
-
-.div-authentication-form hr{
-	background-color: #dddddd;
-	border: none;
-	height: 2px;
-	margin-top: 7px;
-	margin-bottom: 0px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
 .div-authentication-form #title p{
 	font-size: 20px;
 	font-weight: 400;
-	padding-left: 5px;
+	padding-left: 0px;
 	margin-top: 19px;
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
 
 .div-authentication-form-description{
@@ -1524,8 +1520,8 @@ small divs
 .div-comments-title #title{
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
-	padding-left: 38px;
-	padding-right: 54px;
+	margin-left: 38px;
+	margin-right: 54px;
 }
 
 .div-comments hr{
@@ -1536,7 +1532,10 @@ small divs
 	margin-bottom: 0px;
 }
 
-
+.div-comments-block #last_comment_sh{
+	padding-bottom: 40px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
+}
 
 .div-comments-comment hr{
 	margin-top: 10px;
@@ -1565,8 +1564,9 @@ small divs
 }
 
 .div-comments-panel{
-	margin-top: 19px;
+	padding-top: 19px;
 	display: flex;
+	border-top: solid rgba(85,85,85,0.2) 2px;
 }
 
 .div-comments-panel > img{
