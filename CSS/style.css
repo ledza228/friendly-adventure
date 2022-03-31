@@ -442,6 +442,8 @@ div#recipe-text::-webkit-scrollbar {
 }
 
 .author-signature{
+	width: 160px;
+	height: 60px;
 	margin-top: 25px;
 	margin-left: 135px;
 }
@@ -483,30 +485,23 @@ small divs
 }
 
 
-.chi-chi-div #header{
+.chi-chi-div #header {
+	display: block;
 	padding-top: 22px;
-	padding-left: 16px;
-}
+	padding-left: 30px;
+	padding-bottom: 10px;
+	margin-left: 16px;
 
-.chi-chi-div #header p {
 	font-family: 'Playfair Display', serif;
 	font-size: 22px;
 	font-weight: 900;
 	color: #055555;
-	margin-top: 0px;
-	padding-left: 29px;
-	margin-bottom: 10px;
 	letter-spacing: 0.025em;
+
+	width: 220px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
-.chi-chi-div #header hr{
-	width: 252px;
-	border: none;
-	height: 2px;
-	background-color: #555555;
-	opacity: 0.2;
-	margin: 0 0 0 0;	
-}
 
 .chi-chi-div #content{
 	margin-top: 9px;
@@ -515,7 +510,7 @@ small divs
 	flex-direction: row;
 }
 
-.chi-chi-div img{
+.chi-chi-div #face-img{
 	width: 58px;
 	height: 58px;
 	border-radius: 50%;
@@ -527,19 +522,17 @@ small divs
 	
 }
 
-.chi-chi-div #text span{
-	font-weight: bold;
-}
 
-.chi-chi-div #text p{
-	margin: 0 0 0 0;
-}
-
-.chi-chi-div #text #author{
+.chi-chi-div #text #author, .chi-chi-div #text #author-name {
+	display: block;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 15px;
 	font-weight: 300;
 	line-height: 1.2;
+}
+
+.chi-chi-div #text #author-name{
+	font-weight: 700;
 }
 
 .chi-chi-div #icons{
@@ -556,7 +549,7 @@ small divs
 	font-size: 14px;
 }
 
-.chi-chi-div #bottom{
+.chi-chi-div #bottom-img{
 	margin-top: 10px;
 	width: 289px;
 	height: 204px;
@@ -564,12 +557,13 @@ small divs
 }
 
 .chi-chi-div #dots-under-photo{
+	position: absolute;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 111px;
-	margin-right: 101px;
-	padding-top: 186px;
+	flex-direction: row;
+	width: 65px;
+	margin-top: -25px;
+	margin-left: 110px;
 }
 
 .photo-circle{
