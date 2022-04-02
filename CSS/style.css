@@ -681,6 +681,8 @@ small divs
 
 .presentation_line #image {
 	position: relative;
+	width: 59px;
+	height: 59px;
 }
 
 .presentation_line #image span{
