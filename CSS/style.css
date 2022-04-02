@@ -93,8 +93,9 @@ body{
 	justify-content: space-between;
 	margin-right: 0px;
 	padding-top: 25px;
-	width: 77px;
-	padding-left: 935px;
+	width: 80px;
+	margin-left: auto;
+	margin-right: 15px;
 }
 
 .recipe-preview-parent {
