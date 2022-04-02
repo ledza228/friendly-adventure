@@ -66,7 +66,7 @@ body{
     padding-top: 51px;
 }
 
-.background_for_bananas h1{
+.background_for_bananas #title{
 	margin-top: 22px;
 	color: rgba(146, 16, 38, 1);
 	font-size: 32px;
@@ -199,7 +199,7 @@ body{
 .div-recipe-text{
 	width: 600px;
 	margin-left: 36px;
-	margin-top: 29px;
+	margin-top: 20px;
 }
 
 .div-recipe-photo-icon i{
@@ -219,11 +219,12 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	color: #555555;
 	margin-top: 15px;
+	margin-left: 5px;
 	font-size: 16px;
 	font-weight: 300;
 }
 
-.div-recipe-text-icons dlya-casualov{
+.div-recipe-text-icons span{
 	font-size: 18px;
 	font-family: 'Josefin Sans', sans-serif;
 }
@@ -237,7 +238,7 @@ body{
 }
 
 .div-recipe-text #recipe-text{
-	margin-top: 21px;
+	margin-top: 15px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
@@ -300,9 +301,9 @@ div#recipe-text::-webkit-scrollbar {
 	font-style: italic;
 
 	margin-left: 33px;
-	padding-left: 11px;
+	padding-left: 10px;
 	padding-bottom: 5px;
-	margin-top: 25px;
+	margin-top: 20px;
 	width: 440px;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
@@ -318,13 +319,15 @@ div#recipe-text::-webkit-scrollbar {
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 34px;
 	line-height: 1.2;
+	letter-spacing: -0.025em;
 	font-weight: 700;
 }
 
 .div-404 #error-description{
 	display: block;
-	margin-left: 200px;
+	margin-left: 195px;
 	width: 135px;
+	margin-top: 4px;
 
 	font-family: 'Playfair Display', serif;
 	font-size: 16px;
@@ -342,7 +345,7 @@ div#recipe-text::-webkit-scrollbar {
 	color: #a9a9a9;
 
 	margin-left: 250px;
-	transform: rotate(75deg) translate(90px, 110px);
+	transform: rotate(75deg) translate(95px, 110px);
 }
 
 .div-404 #smile span{
@@ -351,8 +354,8 @@ div#recipe-text::-webkit-scrollbar {
 
 
 .div-404-button{
-	margin-left: 210px;
-	margin-top: 95px;
+	margin-left: 205px;
+	margin-top: 105px;
 	text-align: center;
 }
 
@@ -372,7 +375,8 @@ div#recipe-text::-webkit-scrollbar {
 }
 
 .div-content-author{
-	margin-left: 20px;
+	margin-left: 15px;
+	margin-top: 15px;
 }
 
 .author-main-block #text{
@@ -381,7 +385,7 @@ div#recipe-text::-webkit-scrollbar {
 }
 
 .author-main-block{
-    padding-top: 39px;
+    padding-top: 25px;
 	letter-spacing: -0.025em;
 }
 
@@ -394,9 +398,10 @@ div#recipe-text::-webkit-scrollbar {
 }
 
 .author-main-block #country{
-	margin-top: 8px;
+	display: block;
+	margin-top: 5px;
 	margin-bottom: 0px;
-	margin-left: 2px;
+	margin-left: 5px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 16px;
 	font-weight: 300;
@@ -404,6 +409,7 @@ div#recipe-text::-webkit-scrollbar {
 
 .author-main-block #icons{
 	margin-top: 7px;
+	margin-left: 5px;
 	display: block;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 	padding-bottom: 18px;
@@ -421,13 +427,13 @@ div#recipe-text::-webkit-scrollbar {
 
 .div-content-author #title, .div-content-author p{
 	letter-spacing: -0.025em;
-	margin-left: 3px;
+	margin-left: 5px;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .div-content-author #title {
 	display: block;
-	margin-top: 20px;
+	margin-top: 25px;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: 700;
@@ -446,11 +452,9 @@ div#recipe-text::-webkit-scrollbar {
 .author-signature{
 	width: 160px;
 	height: 60px;
-	margin-top: 25px;
+	margin-top: 15px;
 	margin-left: 135px;
 }
-
-/*end*/
 
 /*
 small divs
@@ -489,10 +493,10 @@ small divs
 
 .chi-chi-div #header {
 	display: block;
-	padding-top: 22px;
+	padding-top: 20px;
 	padding-left: 30px;
 	padding-bottom: 10px;
-	margin-left: 16px;
+	margin-left: 15px;
 
 	font-family: 'Playfair Display', serif;
 	font-size: 22px;
@@ -519,8 +523,8 @@ small divs
 }
 
 .chi-chi-div #text{
-	padding-top: 8px;
-	padding-left: 19px;
+	padding-top: 10px;
+	padding-left: 18px;
 	
 }
 
@@ -559,13 +563,13 @@ small divs
 }
 
 .chi-chi-div #dots-under-photo{
-	position: absolute;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
-	width: 65px;
-	margin-top: -25px;
-	margin-left: 110px;
+	width: 75px;
+	margin-top: -20px;
+	margin-left:auto;
+	margin-right: auto;
 }
 
 .photo-circle{
@@ -602,7 +606,7 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 16px;
+	margin-left: 15px;
 	margin-right: 0px;
 	padding-bottom: 5px;
 	padding-top: 35px;	
@@ -635,16 +639,6 @@ small divs
 	font-size: 14px;
 }
 
-.presentation_line #upper-line-hr{
-	background-color: #555555;
-	width: 251px;
-	border: none;
-	height: 2px;
-	margin-top: 10px;
-	margin-left: 17px;
-	margin-bottom: 0px;
-	opacity: 0.2;
-}
 
 .presentation_line_header .title_pre_line{
 	margin-right: 80px;
@@ -654,32 +648,18 @@ small divs
 	margin-right: 6px;
 }
 
-.presentation_line_header hr{
-	width: 252px;
-	height: 2px;
-	background-color: #555555;
-	opacity: 0.2;
-	border: none;
-	margin-left: 0px;
-	margin-top: 10px;
-}
-
-.presentation_line_title p{
-
-	margin-top: 14px;
-}
-
-.presentation_line_title p b{
-	margin-left: 29px;
+.presentation_line_title{
+	margin-left: 25px;
 	font-family: 'Playfair Display', serif;
 	font-size: 21px;
-	font-weight: 168px;
+	font-weight: 700;
 	color: #055555;
 	margin-bottom: 0px;
+	margin-top: 13px;
 }
 
 .presentation_line #pre_lin_content{
-	padding-top: 18px;
+	padding-top: 35px;
 	padding-left: 3px;
 }
 
@@ -796,7 +776,7 @@ small divs
 	margin-left: 15px;
 	margin-right: 23px;
 	padding-top: 27px;
-	padding-bottom: 5px;
+	padding-bottom: 2px;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 } 
 
@@ -856,7 +836,7 @@ small divs
 }
 
 .recipe-mini-div #content{
-	padding-top: 28px;
+	padding-top: 25px;
 }
 
 .recipe-mini-div #content-block{
@@ -894,6 +874,7 @@ small divs
 
 
 .recipe-mini-div img{
+	margin-top: 2px;
 	width: 49px;
 	height: 45px;
 }
@@ -908,8 +889,8 @@ small divs
 }
 
 .recipe-mini-div button{
-	margin-top: 20px;
-	margin-left: 164px;
+	margin-top: 28px;
+	margin-left: 160px;
 }
 
 /*TAGS*/
@@ -929,13 +910,13 @@ small divs
 .title_tags_header{
 	display: block;
 	width: 250px;
-	padding-top: 26px;
+	padding-top: 25px;
 	margin-left: 15px;
 	font-size: 20px;
 	font-style: italic;
 	font-weight: lighter;
 	padding-bottom: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
@@ -962,7 +943,7 @@ small divs
 
 .div-calendar{
 	width: 290px;
-	margin-top: 47px;
+	margin-top: 45px;
 	background-color: white;
 	height: 367px;
 }
@@ -978,8 +959,8 @@ small divs
 	letter-spacing: -0.025em;
 
 	width: 252px;
-	padding-top: 28px;
-	padding-bottom: 6px;
+	padding-top: 30px;
+	padding-bottom: 5px;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
@@ -1069,12 +1050,12 @@ small divs
 
 .popular-now-small-div #title{
 	display: block;
-	margin-left: 17px;
+	margin-left: 15px;
 	font-family: 'Playfair Display', serif;
 	font-size: 32px;
 	font-weight: 900;
 	color: #921026;
-	padding-top: 19px;
+	padding-top: 18px;
 	letter-spacing: 0.025em;
 	padding-bottom: 8px;
 
@@ -1100,14 +1081,14 @@ small divs
 	color: #222222;
 	font-style: italic;
 	margin-top: 10px;
-	width: 250px;
+	width: 235px;
 	margin-bottom: 15px;
 	letter-spacing: -0.01em;
 	line-height: 1.2;
 }
 
 .popular-now-small-div #bottom{
-	padding-left: 18px;
+	padding-left: 15px;
 	display: flex;
 }
 
@@ -1175,11 +1156,10 @@ small divs
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-left: 17px;
-	margin-right: 33px;
+	margin-left: 15px;
 	padding-top: 38px;
-	padding-bottom: 8px;
-	width: 250px;
+	padding-bottom: 5px;
+	width: 240px;
 
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 } 
@@ -1272,7 +1252,7 @@ small divs
 
 .timeline-small-div #long-colomn{
 	margin-right: 4px;
-	margin-top: 3.5px;
+	margin-top: 4px;
 	height: 9px;
 	width: 131px;
 	background-color: #b50051;
@@ -1287,7 +1267,7 @@ small divs
 
 .bottom-timeline-div{
 	line-height: 1.3;
-	padding-top: 12px;
+	padding-top: 14px;
 
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
@@ -1320,27 +1300,20 @@ small divs
 }
 
 .div-authentication-form #title{
-	padding-left: 11px;
-	margin-left: 30px;
+	padding-left: 5px;
+	margin-left: 25px;
 	margin-right: 30px;
-	margin-top: 19px;
-	margin-bottom: 0;
+	margin-top: 20px;
+	padding-bottom: 5px;
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
-	padding-left: 0px;
-	padding-right: 32px;
+	font-size: 20px;
+	font-weight: 700;
 	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
-.div-authentication-form #title p{
-	font-size: 20px;
-	font-weight: 400;
-	padding-left: 0px;
-	margin-top: 19px;
-	margin-bottom: 10px;
-}
-
 .div-authentication-form-description{
+	display: block;
 	font-size: 16px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
@@ -1378,7 +1351,7 @@ small divs
 	display: block;
 	position: relative;
 	padding-left: 18px;
-	margin-bottom: 12px;
+	margin-bottom: 15px;
 	margin-left: 28px;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -1498,7 +1471,6 @@ small divs
 	width: 100%;
 	margin: 20px 0 0 8px;
 	padding-left: 29px;
-	padding-bottom: 40px;
 	text-decoration: none;
 	font-style: normal;
 	color: rgb(77, 77, 77);
@@ -1517,59 +1489,39 @@ small divs
 	margin-top: 47px;
 }
 
-.div-comments-title #title{
+.div-comments-title{
 	font-style: italic;
 	font-family: 'Josefin Sans', sans-serif;
 	margin-left: 38px;
 	margin-right: 54px;
-}
-
-.div-comments hr{
-	background-color: #dddddd;
-	border: none;
-	height: 2px;
-	margin-top: 20px;
-	margin-bottom: 0px;
-}
-
-.div-comments-block #last_comment_sh{
-	padding-bottom: 40px;
-	border-bottom: solid rgba(85,85,85,0.2) 2px;
-}
-
-.div-comments-comment hr{
-	margin-top: 10px;
-	margin-left: 4px;	
-}
-
-.first-comment hr{
-	margin-top: 0px;
-	margin-left: -8px;
-	margin-bottom: 29px;
-}
-
-
-#title p{
 	font-size: 24px;
 	font-weight: 700;
 	margin-top: 20px;
-	margin-bottom: 0;
+}
+
+
+.div-comments-block #last_comment_sh{
+	padding-bottom: 10px;
+	margin-top:-10px;
+	border-bottom: solid rgba(85,85,85,0.2) 2px;
 }
 
 .div-comments-block{
 	padding-top: 13px;
-	padding-left: 51px;
-	padding-right: 54px;
+	padding-left: 40px;
+	padding-right: 55px;
 	padding-bottom: 50px;
 }
 
 .div-comments-panel{
-	padding-top: 19px;
+	padding-left: 10px;
+	padding-top: 25px;
 	display: flex;
 	border-top: solid rgba(85,85,85,0.2) 2px;
 }
 
 .div-comments-panel > img{
+	margin-top: 5px;
 	width: 55px;
 	height: 55px;
 	border-radius: 50%;
@@ -1602,6 +1554,7 @@ small divs
 	font-size: 16px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
+	margin-bottom: 5px;
 }
 
 .div-comments-name{
@@ -1619,8 +1572,12 @@ small divs
 	font-weight: 800;
 	letter-spacing: -0.025em;
 	transition: 0.2s;
-	margin-left: 4px;
+	margin-left: 6px;
 	padding-top: 10px;
+}
+
+.div-comments-date{
+	margin-left: 2px;
 }
 
 .div-comments-reply-button:hover{
@@ -1632,6 +1589,7 @@ small divs
 }
 
 .div-comments-shares{
+	margin-top: 25px;
 	margin-left: 15px;
 	display: inline-block;
 	font-size: 12px;
@@ -1646,20 +1604,22 @@ small divs
 
 
 .div-comments-text{
-	margin-top: 15px;
-	padding-left: 75px;
+	margin-top: 10px;
+	padding-left: 85px;
 	font-size: 16px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 300;
-	letter-spacing: -0.031em;
+	letter-spacing: -0.030em;
+	margin-bottom: 10px;
 }
 
 .div-comments-text-more{
+	font-family: 'Josefin Sans', sans-serif;
 	margin-top: 25px;
 	opacity: 0.54;
 	letter-spacing: -0.025em;
 	font-weight: 300;
-	margin-left: 208px;
+	margin-left: 295px;
 	margin-bottom: 16px;
 }
 
@@ -1674,6 +1634,7 @@ small divs
 
 
 .div-comments-text .recipe-preview-image{
+	margin-top: 15px;
 	margin-bottom: 10px;
 	position: relative;
 }
@@ -1683,7 +1644,7 @@ small divs
 }
 
 .div-comments-reply{
-	padding-top: 14px;
+	padding-top: 10px;
 	padding-left: 70px;
 }
 
@@ -1696,51 +1657,49 @@ small divs
 	POST COMMENTS
 */	
 
-.div-post-comments{
-	margin-top: 125px;
-	margin-left: 0px;
-	margin-left: 131px;
-	justify-content: space-around;
-}
 
 .div-comments-post{
+	margin-top: 125px;
+	margin-left: 0px;
+	margin-left: 130px;
+	justify-content: space-around;
+
 	height: 187px;
 	background-color: white;
 	width: 838px;
 }
 
-.div-comments-post h1{
-	padding-top:  24px;
-	padding-left: 39px;
-	margin: 0px;
-	font-size: 23px;
+.div-comments-post #title{
+	width: 745px;
+	display: flex;
+	justify-content: space-between;
+	padding-top:  25px;
+	padding-left: 37px;
+	font-size: 24px;
 	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
-	margin-bottom: 0px;
 }
 
-.div-comments-post p{
-	margin-top: -11px;
-	margin-bottom: 0px;
-	padding-left: 600px;
+.div-comments-post #title #icons{
+	margin-top: 10px;
 	letter-spacing: 0.025em;
 	font-size: 16px;
-	font-family: 'Josefin Sans', sans-serif;
 	font-style: italic;
-	text-decoration: none;
+	font-weight: 400;
 }
 
-.div-comments-post p a{
+.div-comments-post #title #icons a{
 	text-decoration: none;
-	color: #666;
-	margin-right: 12px;
-	margin-left: 1px;
-	margin-bottom: 0px;
+	color: #000;
+}
+
+.div-comments-post #title #icons a:hover{
+	color: #921026;
 }
 
 .div-comments-post .form_for_comment{
 	margin-top: 14px;
-	width: 754px;
+	width: 755px;
 	height: 90px;
 	background-color: rgb(246,246,246, 1);
 	padding-top: 0px;
