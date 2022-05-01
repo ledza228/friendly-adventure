@@ -464,49 +464,53 @@
 		<div class="div-authentication">
 			<div class="div-authentication-form" id="login">
 				<div id="title">
-					Login
+					Login	
 				</div>
+				<form id="form_for_authent" action="/friendly-adventure" method="GET">
                     <span class="div-authentication-form-description">Login for LEMON</span>
-                    <input class="div-authentication-form-input" type="text" placeholder="email or login">
-                    <input class="div-authentication-form-input" type="text" placeholder="password">
-
+						<input id="email_authent" class="div-authentication-form-input" type="text" placeholder="email or login" required>
+						<input id="password_authent" class="div-authentication-form-input" type="password" placeholder="password" required>
+						<div id="error_for_authent"></div>
                     <div class="div-authentication-form-checkbox-parent">
-                         <label class="div-authentication-form-checkbox div-authentication-form-checkbox-text">Remember me
-                              <input type="checkbox" checked="checked">
-                              <span class="div-authentication-form-checkbox-custom"></span>
-                         </label>
-                         <a href="#signup" class="div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">Forgot your password?</a>
-                    </div>
+						<label class="div-authentication-form-checkbox div-authentication-form-checkbox-text">Remember me
+							<input type="checkbox" checked="checked">
+							<span class="div-authentication-form-checkbox-custom"></span>
+						</label>
+						<a href="#signup" class="div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">Forgot your password?</a>
+					</div>
                     
                     <div class="div-authentication-form-bottom">
-						<button class="common-button div-authentication-button div-authentication-form-checkbox-text">LOGIN</button>
+						<button id="button-login"type="submit" class="common-button div-authentication-button div-authentication-form-checkbox-text">LOGIN</button>
                         <div class="div-authentication-socials">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&nbsp&nbsp&nbsp
                             <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
                         </div>
                         <a href="#signup" class="div-authentication-donthave div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">Don't have an account? Sign in</a>
                     </div>
+				</form>
                </div>
 			<div class="div-authentication-form" id="signup">
 				<div id="title">
 					Sign in
                     </div>
-                    <span class="div-authentication-form-description">Sign in for LEMON</span>
+					<form id="form_for_register" action="/friendly-adventure/" method="GET">
+						<span class="div-authentication-form-description">Sign in for LEMON</span>
 
-                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="email">
-                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="user name">
-                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="password">
-                    <input class="div-authentication-form-input div-register-form-input" type="text" id="username" placeholder="repeat password">
-                    
-                    <div class="div-authentication-form-bottom">
-                         <button class="common-button div-authentication-button div-authentication-form-checkbox-text">SIGN UP</button>
-                         <div class="div-authentication-socials">
-                              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>&nbsp&nbsp&nbsp
-                              <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                         </div>
-                         <div class="div-authentication-tos div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">By joining LEMON, you agree to our <a href="#">Terms of Service</a>.</div>
-                    </div>
-                    <a href="#login" class="div-authentication-log-alternate div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">LOGIN</a>
+						<input id="email_reg" class="div-authentication-form-input div-register-form-input" type="text" placeholder="email">
+						<input class="div-authentication-form-input div-register-form-input" type="text" id="username_reg" placeholder="user name">
+						<input id="password_reg" class="div-authentication-form-input div-register-form-input" type="password"  placeholder="password">
+						<input id="rep_password_reg" class="div-authentication-form-input div-register-form-input" type="password" placeholder="repeat password">
+
+						<div class="div-authentication-form-bottom">
+							<button id="reg_button" type="submit" class="common-button div-authentication-button div-authentication-form-checkbox-text">SIGN UP</button>
+							<div class="div-authentication-socials">
+								<a href="#"><i class="fa-brands fa-facebook-f"></i></a>&nbsp&nbsp&nbsp
+								<a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+							</div>
+							<div class="div-authentication-tos div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">By joining LEMON, you agree to our <a href="#">Terms of Service</a>.</div>
+						</div>
+						<a href="#login" class="div-authentication-log-alternate div-authentication-form-checkbox-forgot div-authentication-form-checkbox-text">LOGIN</a>
+					</form>
 			</div>
 		</div>
 
