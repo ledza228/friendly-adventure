@@ -1770,7 +1770,7 @@ small divs
 
 .submit-button-disabled {
 	background: rgb(158, 158, 158);
-	transition: .3s;
+	transition: 1.3s;
 
     background-repeat: no-repeat;
     background-position: bottom;
@@ -1813,7 +1813,7 @@ small divs
 	text-decoration: none;
 }
 
-.page-selection #current-number a{
+.page-selection #current-page a{
 	color: #629494;
 }
 

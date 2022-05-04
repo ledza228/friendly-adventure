@@ -138,7 +138,35 @@ form_for_registration.addEventListener('submit', (e) => {
 const postButton = document.getElementById("post-button");
 const commentForm = document.getElementById("comment-form");
 
-var headCommentsAmount = 2;
+var maxPages = 6;
+
+var currentPage = sessionStorage.getItem("currentPage");
+var customComments = sessionStorage.getItem("commentsAmount");
+
+if (!currentPage) {
+    currentPage = 1;
+}
+
+if (!customComments) {
+    sessionStorage.setItem("commentsAmount", 0);
+}
+
+changePage(currentPage);
+
+if (currentPage == "1") {
+    printComments();
+}
+
+checkTextArea();
+
+commentForm.addEventListener('input', checkTextArea)
+
+postButton.onclick = () => {
+    changePostButton(postButton, true);
+    console.log("posting comment...");
+
+    addComment(commentForm.value);
+};
 
 function changePostButton(button, toDisable) {
     const classes = ["submit-button-disabled", "submit-button-enabled"];
@@ -157,49 +185,124 @@ function checkTextArea() {
     }
 }
 
-checkTextArea();
+function printComment(elem, clone, text, date, id) {
+    var image = clone.querySelector("#comment-image");
 
-commentForm.addEventListener('input', checkTextArea)
+    if (image) {
+        image.remove();
+    }
+
+    clone.querySelector("#comment-text").innerText = text;
+    clone.querySelector("#comment-name").innerText = "Serega Bandit";
+
+    if (!date) {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        date = dd + '/' + mm + '/' + yyyy;
+    }
+
+    clone.querySelector("#comment-date").innerText = date;
+
+    console.log(id);
+
+    clone.id = "comment" + id;
+
+    elem.before(clone);
+
+    clone.animate([
+        { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0 },
+        { transform: 'scale(.5) rotate(90deg)', background: 'gray', opacity: .5, offset: .2 },
+        { transform: 'scale(1) rotate(0deg)', background: 'white', opacity: 1, offset: 1 },
+    ], {
+        duration: 2000,
+        easing: 'ease-in-out',
+        delay: 10,
+        iterations: 1,
+        direction: 'alternate',
+        fill: 'forwards'
+    });
+}
+
+function addComment(text, date = "") {
+    customComments = sessionStorage.getItem("commentsAmount");
+
+    changePage(1);
+
+    var elem;
+    if (customComments >= 1) {
+        elem = document.querySelector('#comment' + customComments);   
+    }
+    else {
+        elem = document.querySelector('#last-comment');
+    }
+    var clone = elem.cloneNode(true);
 
 
-postButton.onclick = () => {
-    changePostButton(postButton, true);
-    console.log("posting comment...");
+    customComments++;
+
+    console.log(customComments)
+
+    printComment(elem, clone, text, date, customComments);
+
+    sessionStorage.setItem("commentText" + customComments, text);
+    sessionStorage.setItem("commentDate" + customComments, date);
+    sessionStorage.setItem("commentsAmount", customComments);
+
+}
+
+function prevPage() {
+    currentPage = sessionStorage.getItem("currentPage");
+    if (currentPage > 1) {
+        currentPage--;
+        changePage(currentPage);
+    }
+}
+
+function nextPage() {
+    currentPage = sessionStorage.getItem("currentPage");
+    if (currentPage < maxPages) {
+        currentPage++;
+        changePage(currentPage);
+    }
+}
+
+function changePage(page) {
+    var curPage = document.getElementById("current-page");
+    if ('' + page != curPage.innerText) {
+        curPage.id = "page" + curPage.innerText;
+        var futurePage = document.getElementById("page" + page)
+        futurePage.id = "current-page";
+        sessionStorage.setItem("currentPage", page);
+        if (page === 1) {
+            deleteComments();
+            printComments();
+        }
+        if (curPage.innerText == '1') {
+            deleteComments();
+        }
+    }
+}
+
+function printComments() {
+    commentsAmount = sessionStorage.getItem("commentsAmount");
 
     var elem = document.querySelector('#last-comment');
 
-    var clone = elem.cloneNode(true);
-
-    elem.id = "last-comment" + headCommentsAmount;
-    headCommentsAmount++;
-
-    var temp = clone.querySelector("#comment-image");
-
-    if (temp) {
-        temp.remove();
+    for (i = commentsAmount; i >= 1; i--) {
+        var clone = elem.cloneNode(true);
+        printComment(elem, clone, sessionStorage.getItem("commentText" + i), sessionStorage.getItem("commentDate" + i), i);
     }
+}
 
-    clone.querySelector("#comment-text").innerHTML = commentForm.value;
-    clone.querySelector("#comment-name").innerHTML = "Serega Bandit";
-
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    clone.querySelector("#comment-date").innerHTML = dd + '/' + mm + '/' + yyyy;
-
-    elem.before(clone);
-    clone.animate([
-        { transform: 'scale(1)', background: 'red', opacity: 1, offset: 0 },
-        { transform: 'scale(.5) rotate(270deg)', background: 'blue', opacity: .5, offset: .2 },
-        { transform: 'scale(1) rotate(0deg)', background: 'red', opacity: 1, offset: 1 },
-      ], {
-        duration: 2000, //milliseconds
-        easing: 'ease-in-out', //'linear', a bezier curve, etc.
-        delay: 10, //milliseconds
-        iterations: Infinity, //or a number
-        direction: 'alternate', //'normal', 'reverse', etc.
-        fill: 'forwards' //'backwards', 'both', 'none', 'auto'
-      });
-};
+function deleteComments() {
+    commentsAmount = sessionStorage.getItem("commentsAmount");
+    for (i = 1; i <= commentsAmount; i++) {
+        var comment = document.querySelector('#comment' + i);
+        if (comment) {
+            comment.remove();
+        }
+    }
+}
