@@ -522,11 +522,11 @@
 					</div>
 				</div>
 				<div class="form_for_comment">
-					<form>
+					<div>
 						<img src="Photo/girl_from_comment.png">
-						<input type="text" size="41">
-						<input type="submit" value="POST">
-					</form>
+						<input id="comment-form" type="text" class="div-authentication-form-input" size="41">
+						<input id="post-button" type="submit" class="submit-button-disabled" disabled value="POST">
+					</div>
 				</div>
 		</div>
 		
@@ -535,7 +535,7 @@
 				Comments
 			</div>
 			<div class="div-comments-block">
-				<div class="div-comments-comment first-comment">
+				<div id="last-comment" class="div-comments-comment">
 					<div class="div-comments-panel">
 						<img src="Photo/lico_predstavili.png">
 						<div>
@@ -544,14 +544,14 @@
 									post by
 								</div>
 								<div>
-									<div class="div-comments-name">
+									<div id="comment-name" class="div-comments-name">
 										Smuckersreg Toppings
 									</div>
 									<a href="#" class="div-comments-reply-button">
 										reply
 									</a>
 								</div>
-								<div class="div-comments-reply-button div-comments-date">
+								<div id="comment-date" class="div-comments-reply-button div-comments-date">
 									6/10/2024
 								</div>
 							</div>
@@ -568,13 +568,13 @@
 						</div>
 					</div>
 					<div class="div-comments-text">
-						<div class="recipe-preview-image">
+						<div id="comment-image" class="recipe-preview-image">
 							<img src="Photo/rediska.png">
 							<div class="sticker-img">
 								<i class="fa fa-pinterest"></i>
 							</div>
 						</div>
-						<div>
+						<div id="comment-text">
 							Thanks for the recipe!
 						</div>
 					</div>

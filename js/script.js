@@ -135,3 +135,71 @@ form_for_registration.addEventListener('submit', (e) => {
 })
 
 
+const postButton = document.getElementById("post-button");
+const commentForm = document.getElementById("comment-form");
+
+var headCommentsAmount = 2;
+
+function changePostButton(button, toDisable) {
+    const classes = ["submit-button-disabled", "submit-button-enabled"];
+    button.disabled = toDisable;
+    button.classList.remove(classes[toDisable % classes.length]);
+    button.classList.add(classes[(toDisable + 1) % classes.length]);
+    console.log("button disabled" + toDisable);
+}
+
+function checkTextArea() {
+    if (commentForm.value) {
+        changePostButton(postButton, false);
+    }
+    else {
+        changePostButton(postButton, true);
+    }
+}
+
+checkTextArea();
+
+commentForm.addEventListener('input', checkTextArea)
+
+
+postButton.onclick = () => {
+    changePostButton(postButton, true);
+    console.log("posting comment...");
+
+    var elem = document.querySelector('#last-comment');
+
+    var clone = elem.cloneNode(true);
+
+    elem.id = "last-comment" + headCommentsAmount;
+    headCommentsAmount++;
+
+    var temp = clone.querySelector("#comment-image");
+
+    if (temp) {
+        temp.remove();
+    }
+
+    clone.querySelector("#comment-text").innerHTML = commentForm.value;
+    clone.querySelector("#comment-name").innerHTML = "Serega Bandit";
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    clone.querySelector("#comment-date").innerHTML = dd + '/' + mm + '/' + yyyy;
+
+    elem.before(clone);
+    clone.animate([
+        { transform: 'scale(1)', background: 'red', opacity: 1, offset: 0 },
+        { transform: 'scale(.5) rotate(270deg)', background: 'blue', opacity: .5, offset: .2 },
+        { transform: 'scale(1) rotate(0deg)', background: 'red', opacity: 1, offset: 1 },
+      ], {
+        duration: 2000, //milliseconds
+        easing: 'ease-in-out', //'linear', a bezier curve, etc.
+        delay: 10, //milliseconds
+        iterations: Infinity, //or a number
+        direction: 'alternate', //'normal', 'reverse', etc.
+        fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+      });
+};

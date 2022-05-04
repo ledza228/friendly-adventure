@@ -1486,7 +1486,7 @@ small divs
 .div-comments{
 	margin-left: 131px;
 	width: 838px;
-	height: 761px;
+	min-height: 761px;
 	background-color: #FFF;
 	margin-top: 47px;
 }
@@ -1708,22 +1708,22 @@ small divs
 	margin-left: 40px;
 }
 
-.div-comments-post .form_for_comment form img{
+.div-comments-post .form_for_comment div img{
 	padding-left: 18px;
 	padding-right: 66px;
 }
 
-.form_for_comment form {
+.form_for_comment div {
 	padding-top: 13px;
 	margin: 0px;
 	display: flex;
 }
 	
-.form_for_comment form{
+.form_for_comment div{
 	vertical-align:middle;
 }
   
-.form_for_comment form .form_for_comment form{
+.form_for_comment div .form_for_comment div{
 	margin-top: 11px;
 }
 
@@ -1741,7 +1741,6 @@ small divs
 }
   
 .form_for_comment input[type="submit"] {
-	background: rgb(56, 56, 56, 1);
 	color: #ffffff;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -1756,7 +1755,23 @@ small divs
 	margin-top: 11px;
 	display:inline-block;
 
+}
+
+.submit-button-enabled {
+	background: rgb(56, 56, 56, 1);
 	transition: .8s;
+
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+	background-image: linear-gradient(0, white, white);
+    background-size: 0;
+}
+
+.submit-button-disabled {
+	background: rgb(158, 158, 158);
+	transition: .3s;
+
     background-repeat: no-repeat;
     background-position: bottom;
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
