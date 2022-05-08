@@ -105,11 +105,11 @@ form_for_registration.addEventListener('submit', (e) => {
     let flag = false
 
     if (!validateEmail(email_reg.value)){
-        message.push('Email is uncorrect')
+        message.push('Email is incorrect')
     }
 
     if (validatePassword(password_reg.value) || (password_reg.value.length <= 6)){
-        message.push('Password is so easy')
+        message.push('Password is too easy')
     }
 
     if (password_reg.value !== rep_password_reg.value){
@@ -117,7 +117,7 @@ form_for_registration.addEventListener('submit', (e) => {
     }
 
     if (validateUserName(username_reg.value) || (username_reg.value.length <= 3)){
-        message.push('Username is uncorrect')
+        message.push('Username is incorrect')
     }
     
     if (message.length > 0)
@@ -134,6 +134,10 @@ form_for_registration.addEventListener('submit', (e) => {
         e.preventDefault()
 })
 
+
+/* 
+    Comments section 
+*/
 
 const postButton = document.getElementById("post-button");
 const commentForm = document.getElementById("comment-form");
