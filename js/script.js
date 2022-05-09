@@ -1,5 +1,3 @@
-
-
 //Save button feature
 function saveButtonReplace(button){
     var buttonReplace = document.createElement("span");
@@ -197,8 +195,6 @@ const password_authent = document.getElementById('password_authent')
 const form_authent = document.getElementById('form_for_authent')
 const error_for_authent = document.getElementById('error_for_authent')
 var login_button = document.getElementById('button-login')
-
-
 
 form_authent.addEventListener('submit', (e) =>
 {
