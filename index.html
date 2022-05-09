@@ -463,14 +463,21 @@
 
 		<div class="div-authentication">
 			<div class="div-authentication-form" id="login">
+			<div class="only-for-auth-form">
 				<div id="title">
 					Login	
 				</div>
 				<form id="form_for_authent" action="/friendly-adventure" method="GET">
                     <span class="div-authentication-form-description">Login for LEMON</span>
+					<div class="form-field">
 						<input id="email_authent" class="div-authentication-form-input" type="text" placeholder="email or login" required>
+						<small></small>
+					</div>
+					<div class="form-field">
 						<input id="password_authent" class="div-authentication-form-input" type="password" placeholder="password" required>
-						<div id="error_for_authent"></div>
+						<small></small>
+					</div>
+					<div id="error_for_authent"></div>
                     <div class="div-authentication-form-checkbox-parent">
 						<label class="div-authentication-form-checkbox div-authentication-form-checkbox-text">Remember me
 							<input type="checkbox" checked="checked">
@@ -489,6 +496,7 @@
                     </div>
 				</form>
                </div>
+			</div>
 			<div class="div-authentication-form" id="signup">
 				<div id="title">
 					Sign in
@@ -496,10 +504,22 @@
 					<form id="form_for_register" action="/friendly-adventure/" method="GET">
 						<span class="div-authentication-form-description">Sign in for LEMON</span>
 
-						<input id="email_reg" class="div-authentication-form-input div-register-form-input" type="text" placeholder="email">
-						<input class="div-authentication-form-input div-register-form-input" type="text" id="username_reg" placeholder="user name">
-						<input id="password_reg" class="div-authentication-form-input div-register-form-input" type="password"  placeholder="password">
-						<input id="rep_password_reg" class="div-authentication-form-input div-register-form-input" type="password" placeholder="repeat password">
+						<div class="form-field">
+							<input id="email_reg" class="div-authentication-form-input div-register-form-input" type="text" placeholder="email">
+							<small></small>
+						</div>
+						<div class="form-field">
+							<input class="div-authentication-form-input div-register-form-input" type="text" id="username_reg" placeholder="user name">
+							<small></small>
+						</div>
+						<div class="form-field">
+							<input id="password_reg" class="div-authentication-form-input div-register-form-input" type="password"  placeholder="password">
+							<small></small>
+						</div>
+						<div class="form-field">
+							<input id="rep_password_reg" class="div-authentication-form-input div-register-form-input" type="password" placeholder="repeat password">
+							<small></small>
+						</div>
 
 						<div class="div-authentication-form-bottom">
 							<button id="reg_button" type="submit" class="common-button div-authentication-button div-authentication-form-checkbox-text">SIGN UP</button>
