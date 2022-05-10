@@ -460,17 +460,24 @@ function setSlide(slideNumber) {
     points = document.getElementsByClassName("photo-circle");
     for (i = 0; i < 5; i++)
         points[i].className = "photo-circle" + (i == slideNumber ? " photo-circle-gray" : "");
-
-    sliderLine.style.left = -slideNumber * width + 'px';
-    localStorage.setItem('sliderNumber', slideNumber);
-    
+   
+   sliderLine.style.left = -slideNumber * width + 'px';
+   localStorage.setItem('sliderNumber', slideNumber);
 }
 
 function setSliderTransfer(number){
     number %= 5;
     setSlide(number);
-    setTimeout(setSliderTransfer, 7000, ++number);
+    localStorage.setItem('pid', setTimeout(setSliderTransfer, 7000, ++number));
 }
 
 slideNumber = localStorage.getItem('sliderNumber');
 setSliderTransfer(slideNumber ? slideNumber : 2);
+
+points = document.getElementsByClassName("photo-circle");
+
+function onClickPoint(i){
+    clearTimeout(localStorage.getItem('pid'));
+    setSliderTransfer(i);
+}
+
