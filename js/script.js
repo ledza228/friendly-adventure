@@ -449,3 +449,28 @@ function deleteComments() {
         }
     }
 }
+
+
+// Slider initialization
+function setSlide(slideNumber) {
+    
+    width = document.getElementsByClassName("bananas_slider")[0].offsetWidth; 
+    sliderLine = document.getElementsByClassName("bananas_slider_line")[0];
+    
+    points = document.getElementsByClassName("photo-circle");
+    for (i = 0; i < 5; i++)
+        points[i].className = "photo-circle" + (i == slideNumber ? " photo-circle-gray" : "");
+
+    sliderLine.style.left = -slideNumber * width + 'px';
+    localStorage.setItem('sliderNumber', slideNumber);
+    
+}
+
+function setSliderTransfer(number){
+    number %= 5;
+    setSlide(number);
+    setTimeout(setSliderTransfer, 7000, ++number);
+}
+
+slideNumber = localStorage.getItem('sliderNumber');
+setSliderTransfer(slideNumber ? slideNumber : 2);
