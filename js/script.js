@@ -10,7 +10,7 @@ function saveButtonReplace(button){
 
 var saveButton = document.getElementById("save-button");
 
- if (localStorage.getItem("isSavedButton") === "true"){
+ if (sessionStorage.getItem("isSavedButton") === "true"){
      saveButtonReplace(saveButton);
  }
 
@@ -26,7 +26,7 @@ saveButton.onclick = () => {
     setTimeout(() => newDiv.remove(),5000);
     
     saveButtonReplace(saveButton);
-    localStorage.setItem('isSavedButton', true);
+    sessionStorage.setItem('isSavedButton', true);
 };
 
 // validate data
@@ -462,22 +462,22 @@ function setSlide(slideNumber) {
         points[i].className = "photo-circle" + (i == slideNumber ? " photo-circle-gray" : "");
    
    sliderLine.style.left = -slideNumber * width + 'px';
-   localStorage.setItem('sliderNumber', slideNumber);
+   sessionStorage.setItem('sliderNumber', slideNumber);
 }
 
 function setSliderTransfer(number){
     number %= 5;
     setSlide(number);
-    localStorage.setItem('pid', setTimeout(setSliderTransfer, 7000, ++number));
+    sessionStorage.setItem('pid', setTimeout(setSliderTransfer, 7000, ++number));
 }
 
-slideNumber = localStorage.getItem('sliderNumber');
+slideNumber = sessionStorage.getItem('sliderNumber');
 setSliderTransfer(slideNumber ? slideNumber : 2);
 
 points = document.getElementsByClassName("photo-circle");
 
 function onClickPoint(i){
-    clearTimeout(localStorage.getItem('pid'));
+    clearTimeout(sessionStorage.getItem('pid'));
     setSliderTransfer(i);
 }
 
