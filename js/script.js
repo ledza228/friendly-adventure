@@ -1,5 +1,4 @@
 
-
 //Save button feature
 function saveButtonReplace(button){
     var buttonReplace = document.createElement("span");
@@ -278,21 +277,19 @@ form_for_registration.addEventListener('input', debounce(function (e) {
     Comments section 
 */
 
+
+
 const postButton = document.getElementById("post-button");
 const commentForm = document.getElementById("comment-form");
 
 var maxPages = 6;
 
 var currentPage = sessionStorage.getItem("currentPage");
-var customComments = sessionStorage.getItem("commentsAmount");
 
 if (!currentPage) {
     currentPage = 1;
 }
 
-if (!customComments) {
-    sessionStorage.setItem("commentsAmount", 0);
-}
 
 changePage(currentPage);
 
@@ -338,14 +335,14 @@ function printComment(elem, clone, text, date, id) {
     clone.querySelector("#comment-text").innerText = text;
     clone.querySelector("#comment-name").innerText = "Serega Bandit";
 
-    if (!date) {
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
+    
+    var today = date;
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
 
-        date = dd + '/' + mm + '/' + yyyy;
-    }
+    date = dd + '/' + mm + '/' + yyyy;
+
 
     clone.querySelector("#comment-date").innerText = date;
 
@@ -369,30 +366,106 @@ function printComment(elem, clone, text, date, id) {
     });
 }
 
-function addComment(text, date = "") {
-    customComments = sessionStorage.getItem("commentsAmount");
+function addComment(fieldText) {
+    
+    var db;
+    let openRequest = indexedDB.open("comments_base", 1);
 
-    changePage(1);
+    openRequest.onupgradeneeded = function () {
+        console.log('update db');
+        db = openRequest.result;
+        
+        if (!db.objectStoreNames.contains('comments')){
+            commentsStore = db.createObjectStore('comments', {keyPath: 'id', autoIncrement: true} );
+            
+            commentsStore.createIndex('id', 'id');
+            commentsStore.createIndex('date', 'date');
+            commentsStore.createIndex('text', 'text');
 
-    var elem;
-    if (customComments >= 1) {
-        elem = document.querySelector('#comment' + customComments);   
+        }
+        anotherAddCommentPart(db, fieldText);
+
+    };
+
+    openRequest.onsuccess = function () {
+
+        db = openRequest.result;
+        console.log('Success');
+        anotherAddCommentPart(db, fieldText)
+    };
+
+
+    openRequest.onerror = function () {
+
+        console.log("Error on request indexeddb");
+
+    };
+
+
+}
+
+function anotherAddCommentPart(db, fieldText){
+
+    let transaction = db.transaction('comments', 'readwrite');
+    let comments = transaction.objectStore('comments');
+
+    let comment = {
+        text: fieldText,
+        date: new Date()
     }
-    else {
-        elem = document.querySelector('#last-comment');
+
+    let request = comments.add(comment);
+    let isSuccess = false;
+    
+    request.onsuccess = () => {
+        isSuccess = true;
     }
-    var clone = elem.cloneNode(true);
+
+    request.onerror = () => {
+
+    };
+
+    //On complete transaction
+    transaction.oncomplete = () => {
+
+        if (!isSuccess) return;
+    
+        changePage(1);
 
 
-    customComments++;
+        transaction = db.transaction('comments', 'readwrite');
+        comments = transaction.objectStore('comments');
+        request = comments.getAll();
+        
+        request.onerror = () => {
+            request.result = [];
+        }
 
-    console.log(customComments)
+        request.onsuccess = () => {
 
-    printComment(elem, clone, text, date, customComments);
+        }
 
-    sessionStorage.setItem("commentText" + customComments, text);
-    sessionStorage.setItem("commentDate" + customComments, date);
-    sessionStorage.setItem("commentsAmount", customComments);
+        transaction.oncomplete = () => {
+            console.log('Start complit adding');
+            var elem;
+
+            if (request.result.length > 1) {
+                elem = document.querySelector('#comment' + request.result[request.result.length - 2]['id']);   
+            }
+            else {
+                elem = document.querySelector('#last-comment');
+            }
+            var clone = elem.cloneNode(true);
+
+
+            console.log(request.result.length);   
+
+            let index = request.result[request.result.length - 1]['id'];
+            printComment(elem, clone, comment['text'], comment['date'], index);
+
+            
+        }
+    }
 
 }
 
@@ -430,24 +503,117 @@ function changePage(page) {
 }
 
 function printComments() {
-    commentsAmount = sessionStorage.getItem("commentsAmount");
+    var db;
+    let openRequest = indexedDB.open("comments_base", 1);
 
+    openRequest.onupgradeneeded = function () {
+        console.log('update db');
+        db = openRequest.result;
+
+        if (!db.objectStoreNames.contains('comments')){
+            commentsStore = db.createObjectStore('comments', {keyPath: 'id', autoIncrement: true} );
+            
+            commentsStore.createIndex('id', 'id');
+            commentsStore.createIndex('date', 'date');
+            commentsStore.createIndex('text', 'text');
+
+        }
+        nextPartDrawing(db);
+
+    };
+
+    openRequest.onsuccess = function () {
+
+        db = openRequest.result;
+        console.log('Success');
+        nextPartDrawing(db);
+
+    };
+
+
+    openRequest.onerror = function () {
+
+        console.log("Error on request indexeddb");
+
+    };
+
+    
+
+}
+
+function nextPartDrawing(db){
+
+    let transaction = db.transaction('comments', 'readonly');
+    let comments = transaction.objectStore('comments');
+
+    let request = comments.getAll();
+    request.onsuccess = () => {
+
+    }
+
+    request.onerror = () => {
+        request.result = [];
+    }
     var elem = document.querySelector('#last-comment');
+    
+    transaction.oncomplete = () => {
 
-    for (i = commentsAmount; i >= 1; i--) {
-        var clone = elem.cloneNode(true);
-        printComment(elem, clone, sessionStorage.getItem("commentText" + i), sessionStorage.getItem("commentDate" + i), i);
+        let items = request.result;
+        for (i = items.length - 1; i >= 0; i--) {
+            var clone = elem.cloneNode(true);
+            printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id']);
+        }
     }
 }
 
 function deleteComments() {
-    commentsAmount = sessionStorage.getItem("commentsAmount");
-    for (i = 1; i <= commentsAmount; i++) {
-        var comment = document.querySelector('#comment' + i);
-        if (comment) {
-            comment.remove();
+    
+    var db;
+    let openRequest = indexedDB.open("comments_base", 1);
+
+    openRequest.onupgradeneeded = function () {
+        console.log('update db');
+        db = openRequest.result;
+
+        if (!db.objectStoreNames.contains('comments')){
+            commentsStore = db.createObjectStore('comments', {keyPath: 'id', autoIncrement: true} );
+            
+            commentsStore.createIndex('id', 'id');
+            commentsStore.createIndex('date', 'date');
+            commentsStore.createIndex('text', 'text');
+
         }
-    }
+
+    };
+
+    openRequest.onsuccess = function () {
+
+        db = openRequest.result;
+        let transaction = db.transaction('comments', 'readonly');
+        let comments = transaction.objectStore('comments');
+
+        let request = comments.getAll();
+        request.onsuccess = () => {
+
+        }
+
+        request.onerror = () => {
+            request.result = [];
+        }
+        console.log('Success');
+
+        transaction.oncomplete = () => {
+            request = request.result;
+            for (i = 0; i < request.length; i++) {
+                var comment = document.querySelector('#comment' + request[i]['id']);
+                if (comment) {
+                    comment.remove();
+                }
+            }
+        }
+    };
+
+   
 }
 
 
