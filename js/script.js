@@ -278,7 +278,6 @@ form_for_registration.addEventListener('input', debounce(function (e) {
 */
 
 
-
 const postButton = document.getElementById("post-button");
 const commentForm = document.getElementById("comment-form");
 
@@ -325,7 +324,7 @@ function checkTextArea() {
     }
 }
 
-function printComment(elem, clone, text, date, id) {
+function printComment(elem, clone, text, date, id, iterations) {
     var image = clone.querySelector("#comment-image");
 
     if (image) {
@@ -354,13 +353,13 @@ function printComment(elem, clone, text, date, id) {
 
     clone.animate([
         { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0 },
-        { transform: 'scale(.5) rotate(90deg)', background: 'gray', opacity: .5, offset: .2 },
-        { transform: 'scale(1) rotate(0deg)', background: 'white', opacity: 1, offset: 1 },
+        { transform: 'scale(0.95)', background: '#EEE', opacity: .7, offset: 0.1 },
+        { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0.2 },
     ], {
-        duration: 2000,
+        duration: 1500,
         easing: 'ease-in-out',
         delay: 10,
-        iterations: 1,
+        iterations: iterations,
         direction: 'alternate',
         fill: 'forwards'
     });
@@ -461,7 +460,7 @@ function anotherAddCommentPart(db, fieldText){
             console.log(request.result.length);   
 
             let index = request.result[request.result.length - 1]['id'];
-            printComment(elem, clone, comment['text'], comment['date'], index);
+            printComment(elem, clone, comment['text'], comment['date'], index, 1);
 
             
         }
@@ -561,7 +560,7 @@ function nextPartDrawing(db){
         let items = request.result;
         for (i = items.length - 1; i >= 0; i--) {
             var clone = elem.cloneNode(true);
-            printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id']);
+            printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id'], 0);
         }
     }
 }
