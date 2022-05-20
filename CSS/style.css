@@ -1854,20 +1854,22 @@ small divs
 	margin-top: 40px;
 }
 
-.page-selection a{
+.page-selection button{
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 18px;
 	line-height: 1.2;
 	font-weight: 300;
+	border: none;
+	background-color: #FFF;
 	color: black;
 	text-decoration: none;
 }
 
-.page-selection #current-page a{
+.page-selection #current-page button{
 	color: #629494;
 }
 
-.page-selection a:hover{
+.page-selection button:hover{
 	font-weight: 500;
 	text-decoration: underline;
 }
@@ -2106,4 +2108,8 @@ header .hrefs a + a{
 	margin-left: 235px;
 	font-family: 'Josefin Sans', sans-serif;
 	color: green;
+}
+
+#last-comment {
+	display: none;
 }

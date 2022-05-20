@@ -281,7 +281,11 @@ form_for_registration.addEventListener('input', debounce(function (e) {
 const postButton = document.getElementById("post-button");
 const commentForm = document.getElementById("comment-form");
 
-var maxPages = 6;
+document.getElementById("prev-page").onclick = prevPage;
+document.getElementById("next-page").onclick = nextPage;
+
+var maxPages = 1;
+var maxCommentsOnPage = 6;
 
 var currentPage = sessionStorage.getItem("currentPage");
 
@@ -418,10 +422,11 @@ function anotherAddCommentPart(db, fieldText){
     
     request.onsuccess = () => {
         isSuccess = true;
+        console.log("Did save comment to db");
     }
 
     request.onerror = () => {
-
+        console.log("Didn't save comment to db");
     };
 
     //On complete transaction
@@ -445,7 +450,7 @@ function anotherAddCommentPart(db, fieldText){
         }
 
         transaction.oncomplete = () => {
-            console.log('Start complit adding');
+            console.log('Completing adding');
             var elem;
 
             if (request.result.length > 1) {
