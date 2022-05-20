@@ -297,7 +297,7 @@ if (!currentPage) {
 changePage(currentPage);
 
 if (currentPage == "1") {
-    printComments();
+    printComments(1);
 }
 
 checkTextArea();
@@ -498,15 +498,15 @@ function changePage(page) {
         sessionStorage.setItem("currentPage", page);
         if (page === 1) {
             deleteComments();
-            printComments();
+            printComments(page);
         }
-        if (curPage.innerText == '1') {
-            deleteComments();
-        }
+        // if (curPage.innerText == '1') {
+        //     deleteComments();
+        // }
     }
 }
 
-function printComments() {
+function printComments(page) {
     var db;
     let openRequest = indexedDB.open("comments_base", 1);
 
@@ -522,7 +522,6 @@ function printComments() {
             commentsStore.createIndex('text', 'text');
 
         }
-        nextPartDrawing(db);
 
     };
 
@@ -530,7 +529,7 @@ function printComments() {
 
         db = openRequest.result;
         console.log('Success');
-        nextPartDrawing(db);
+        nextPartDrawing(db, page);
 
     };
 
@@ -545,29 +544,85 @@ function printComments() {
 
 }
 
-function nextPartDrawing(db){
+function nextPartDrawing(db, page){
 
-    let transaction = db.transaction('comments', 'readonly');
-    let comments = transaction.objectStore('comments');
+    var advanced = false;
+ 
+    var store = db.transaction('comments', 'readonly').objectStore('comments');
+    var count = store.count();
+    var rowAmount;
 
-    let request = comments.getAll();
-    request.onsuccess = () => {
-
+    count.onsuccess = function() {
+        console.log(count.result);
+        rowAmount = count.result;
     }
+    var advanceAmount, elemAmount;
+    advanceAmount = page === 1 ? count.result - (rowAmount % maxCommentsOnPage) : maxCommentsOnPage * (maxPages - page);
+    elemAmount = page === 1 ? count.result % maxCommentsOnPage + advanceAmount : advanceAmount + maxCommentsOnPage;    
 
-    request.onerror = () => {
-        request.result = [];
-    }
     var elem = document.querySelector('#last-comment');
-    
-    transaction.oncomplete = () => {
+    var result = [];
 
-        let items = request.result;
-        for (i = items.length - 1; i >= 0; i--) {
-            var clone = elem.cloneNode(true);
-            printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id'], 0);
+    var key = IDBKeyRange.bound(advanceAmount, elemAmount, false, true);
+
+    db.transaction('comments', 'readonly').objectStore('comments').openCursor(null, 'prev').onsuccess = function(event) {
+        var cursor = event.target.result;
+
+        if (!cursor) {
+            return;
+        }
+
+        // var advanceAmount = page === 1 ? count.result - (count.result % maxCommentsOnPage) : maxCommentsOnPage;
+
+        // if (!advanced && advanceAmount > 0) {
+        //     advanced = true;
+        //     cursor.advance((page-1)*maxCommentsOnPage);
+        // }
+
+        var counter = 0;
+        var value = cursor.value;
+        console.log(value);
+
+        result.push(value);
+
+        // var clone = elem.cloneNode(true);
+        // printComment(elem, clone, value['text'],  value['date'], value['id'], 0);
+
+        if (counter < count.result && counter < maxCommentsOnPage) {
+            counter++;
+            cursor.continue();
         }
     }
+
+
+    transaction.oncomplete = () => {
+        for (i = result.length - 1; i >= 0; i--) {
+            var clone = elem.cloneNode(true);
+            printComment(elem, clone, result[i]['text'],  result[i]['date'], result[i]['id'], 0);
+        }
+    }
+
+    // let transaction = db.transaction('comments', 'readonly');
+    // let comments = transaction.objectStore('comments');
+
+    // let request = comments.getAll();
+    // request.onsuccess = () => {
+
+    // }
+
+    // request.onerror = () => {
+    //     request.result = [];
+    // }
+    
+    
+    // transaction.oncomplete = () => {
+        
+    //     let items = request.result;
+    //     for (i = items.length - 1; i >= 0; i--) {
+    //         var clone = elem.cloneNode(true);
+    //         printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id'], 0);
+    //     }
+    // }
 }
 
 function deleteComments() {
