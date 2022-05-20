@@ -353,8 +353,8 @@ function printComment(elem, clone, text, date, id, iterations) {
 
     clone.animate([
         { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0 },
-        { transform: 'scale(0.95)', background: '#EEE', opacity: .7, offset: 0.1 },
-        { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0.2 },
+        { transform: 'scale(0.95)', background: 'white', opacity: .7, offset: 0.15 },
+        { transform: 'scale(1)', background: 'white', opacity: 1, offset: 0.3 },
     ], {
         duration: 1500,
         easing: 'ease-in-out',
