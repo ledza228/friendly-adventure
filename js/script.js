@@ -285,7 +285,7 @@ document.getElementById("prev-page").onclick = prevPage;
 document.getElementById("next-page").onclick = nextPage;
 
 var maxPages = 1;
-var maxCommentsOnPage = 6;
+var maxCommentsOnPage = 2;
 
 var currentPage = sessionStorage.getItem("currentPage");
 
@@ -544,7 +544,7 @@ function printComments(page) {
 
 }
 
-function nextPartDrawing(db, page){
+function nextPartDrawing(db, page) {
 
     var advanced = false;
  
@@ -555,9 +555,9 @@ function nextPartDrawing(db, page){
     count.onsuccess = function() {
         console.log(count.result);
         rowAmount = count.result;
-    }
+    
     var advanceAmount, elemAmount;
-    advanceAmount = page === 1 ? count.result - (rowAmount % maxCommentsOnPage) : maxCommentsOnPage * (maxPages - page);
+    advanceAmount = page === 1 ? count.result - maxCommentsOnPage * (maxPages - page) : maxCommentsOnPage * (maxPages - page);
     elemAmount = page === 1 ? count.result % maxCommentsOnPage + advanceAmount : advanceAmount + maxCommentsOnPage;    
 
     var elem = document.querySelector('#last-comment');
@@ -585,22 +585,23 @@ function nextPartDrawing(db, page){
 
         result.push(value);
 
-        // var clone = elem.cloneNode(true);
-        // printComment(elem, clone, value['text'],  value['date'], value['id'], 0);
+        var clone = elem.cloneNode(true);
+        printComment(elem, clone, value['text'],  value['date'], value['id'], 0);
 
         if (counter < count.result && counter < maxCommentsOnPage) {
             counter++;
             cursor.continue();
         }
     }
+}
 
 
-    transaction.oncomplete = () => {
-        for (i = result.length - 1; i >= 0; i--) {
-            var clone = elem.cloneNode(true);
-            printComment(elem, clone, result[i]['text'],  result[i]['date'], result[i]['id'], 0);
-        }
-    }
+    // transaction.oncomplete = () => {
+    //     for (i = result.length - 1; i >= 0; i--) {
+    //         var clone = elem.cloneNode(true);
+    //         printComment(elem, clone, result[i]['text'],  result[i]['date'], result[i]['id'], 0);
+    //     }
+    // }
 
     // let transaction = db.transaction('comments', 'readonly');
     // let comments = transaction.objectStore('comments');
