@@ -617,7 +617,7 @@ function nextPartDrawing(db, page) {
         var advanceAmount, elemAmount;
         var inc = count.result % maxCommentsOnPage;
         if (inc === 0) {
-            inc = 4;
+            inc = maxCommentsOnPage;
         }
         advanceAmount = page == maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + inc + 1;
 
