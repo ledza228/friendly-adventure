@@ -615,12 +615,18 @@ function nextPartDrawing(db, page) {
         console.log(count.result);
         
         var advanceAmount, elemAmount;
-        advanceAmount = page == maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + 2;
-        
-        elemAmount = advanceAmount + (page == maxPages ? count.result % maxCommentsOnPage : maxCommentsOnPage);
-        var elem = document.querySelector('#last-comment');
+        var inc = count.result % maxCommentsOnPage;
+        if (inc === 0) {
+            inc = maxCommentsOnPage * (maxPages - page);
+        }
+        advanceAmount = page == maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + inc + 1;
 
-        var key = IDBKeyRange.bound(advanceAmount, elemAmount, false, true);
+        inc = count.result % maxCommentsOnPage;
+        if (inc === 0) {
+            inc = maxCommentsOnPage;
+        }
+        elemAmount = advanceAmount + (page == maxPages ? inc : maxCommentsOnPage);
+        var elem = document.querySelector('#last-comment');
         
         
         var request = db.transaction('comments', 'readonly').objectStore('comments').getAll()
