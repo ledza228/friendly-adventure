@@ -413,7 +413,7 @@ function printComment(elem, clone, text, date, id, iterations) {
     }
 
     clone.querySelector("#comment-text").innerText = text;
-    clone.querySelector("#comment-name").innerText = "Mazura udav";
+    clone.querySelector("#comment-name").innerText = "Pagination enjoyer";
 
     
     var today = date;
@@ -597,8 +597,6 @@ function printComments(page) {
 }
 
 function nextPartDrawing(db, page) {
-
-    var advanced = false;
  
     var store = db.transaction('comments', 'readonly').objectStore('comments');
     var count = store.count();
@@ -608,10 +606,8 @@ function nextPartDrawing(db, page) {
         
         var advanceAmount, elemAmount;
         advanceAmount = page === maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + 2;
-        // count.result - count.result % maxCommentsOnPage
-        // advanceAmount = (advanceAmount === count.result ? advanceAmount - maxCommentsOnPage : advanceAmount) + 1;
+        
         elemAmount = advanceAmount + maxCommentsOnPage;
-        // page === maxPages ? (count.result % maxCommentsOnPage === 0 ? maxCommentsOnPage : count.result % maxCommentsOnPage) + advanceAmount : advanceAmount + maxCommentsOnPage
         var elem = document.querySelector('#last-comment');
         var result = [];
 
