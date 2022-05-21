@@ -285,7 +285,7 @@ document.getElementById("prev-page").onclick = prevPage;
 document.getElementById("next-page").onclick = nextPage;
 
 var maxPages = 1;
-var maxCommentsOnPage = 2;
+var maxCommentsOnPage = 4;
 
 var currentPage = sessionStorage.getItem("currentPage");
 
@@ -294,7 +294,9 @@ if (!currentPage) {
 }
 
 
-changePage(currentPage);
+checkPages();
+
+
 
 if (currentPage == "1") {
     printComments(1);
@@ -302,7 +304,12 @@ if (currentPage == "1") {
 
 checkTextArea();
 
-commentForm.addEventListener('input', checkTextArea)
+
+document.getElementById('current-page').addEventListener('click', 
+    function(){
+        changePage(1);
+});
+commentForm.addEventListener('input', checkTextArea);
 
 postButton.onclick = () => {
     changePostButton(postButton, true);
@@ -310,6 +317,76 @@ postButton.onclick = () => {
 
     addComment(commentForm.value);
 };
+
+function checkPages() {
+    var db;
+    let openRequest = indexedDB.open("comments_base", 1);
+
+    openRequest.onupgradeneeded = function () {
+        console.log('update db');
+        db = openRequest.result;
+
+        if (!db.objectStoreNames.contains('comments')){
+            commentsStore = db.createObjectStore('comments', {keyPath: 'id', autoIncrement: true} );
+            
+            commentsStore.createIndex('id', 'id');
+            commentsStore.createIndex('date', 'date');
+            commentsStore.createIndex('text', 'text');
+
+        }
+
+    };
+
+    openRequest.onsuccess = function () {
+
+        db = openRequest.result;
+        console.log('Successfully opened db to check pages');
+        
+        var store = db.transaction('comments', 'readonly').objectStore('comments');
+        var count = store.count();
+
+        count.onsuccess = function() {
+            console.log('Current amount of rows while checking pages' + count.result);
+            maxPages = Math.ceil(count.result / maxCommentsOnPage);
+
+            var pageNumbers = document.getElementsByClassName('comments-page');
+            var currentPageNumbers = pageNumbers.length;
+            if (maxPages === currentPageNumbers) {
+                return;
+            }
+            
+            var pageNum = pageNumbers[currentPageNumbers-1];
+            if (!pageNum) {
+                console.log('No such page number');
+            }
+
+            if (maxPages > currentPageNumbers) {
+                for (var i = maxPages; i >= currentPageNumbers + 1; i--) {
+                    var clone = pageNum.cloneNode(true);
+                    clone.innerHTML = '<button type="button' + i + '">' + i + '<button>';
+                    clone.id = 'page' + i;
+                    clone.addEventListener('click', function(event) {
+                        changePage(event.target.innerText);
+                    });
+                    pageNum.after(clone);
+                }
+            }
+            else {
+                for (var i = currentPageNumbers; i >= maxPages; i--) {
+                    var page = document.querySelector('#page' + i);
+                    if (page) {
+                        page.remove();
+                    }
+                }
+            }
+            maxPages = pageNumbers.length;
+            console.log('Max pages = ' + maxPages);
+            changePage(currentPage);
+        }
+
+    };
+
+}
 
 function changePostButton(button, toDisable) {
     const classes = ["submit-button-disabled", "submit-button-enabled"];
@@ -336,7 +413,7 @@ function printComment(elem, clone, text, date, id, iterations) {
     }
 
     clone.querySelector("#comment-text").innerText = text;
-    clone.querySelector("#comment-name").innerText = "Serega Bandit";
+    clone.querySelector("#comment-name").innerText = "Mazura udav";
 
     
     var today = date;
@@ -393,7 +470,7 @@ function addComment(fieldText) {
     openRequest.onsuccess = function () {
 
         db = openRequest.result;
-        console.log('Success');
+        console.log('Successfully opeed db to add comment');
         anotherAddCommentPart(db, fieldText)
     };
 
@@ -433,9 +510,6 @@ function anotherAddCommentPart(db, fieldText){
     transaction.oncomplete = () => {
 
         if (!isSuccess) return;
-    
-        changePage(1);
-
 
         transaction = db.transaction('comments', 'readwrite');
         comments = transaction.objectStore('comments');
@@ -451,23 +525,8 @@ function anotherAddCommentPart(db, fieldText){
 
         transaction.oncomplete = () => {
             console.log('Completing adding');
-            var elem;
-
-            if (request.result.length > 1) {
-                elem = document.querySelector('#comment' + request.result[request.result.length - 2]['id']);   
-            }
-            else {
-                elem = document.querySelector('#last-comment');
-            }
-            var clone = elem.cloneNode(true);
-
-
-            console.log(request.result.length);   
-
-            let index = request.result[request.result.length - 1]['id'];
-            printComment(elem, clone, comment['text'], comment['date'], index, 1);
-
-            
+            changePage(1);
+            checkPages();            
         }
     }
 
@@ -496,13 +555,8 @@ function changePage(page) {
         var futurePage = document.getElementById("page" + page)
         futurePage.id = "current-page";
         sessionStorage.setItem("currentPage", page);
-        if (page === 1) {
-            deleteComments();
-            printComments(page);
-        }
-        // if (curPage.innerText == '1') {
-        //     deleteComments();
-        // }
+        deleteComments();
+        printComments(page);
     }
 }
 
@@ -528,7 +582,7 @@ function printComments(page) {
     openRequest.onsuccess = function () {
 
         db = openRequest.result;
-        console.log('Success');
+        console.log('Successfully opened db to print comments');
         nextPartDrawing(db, page);
 
     };
@@ -540,8 +594,6 @@ function printComments(page) {
 
     };
 
-    
-
 }
 
 function nextPartDrawing(db, page) {
@@ -550,130 +602,54 @@ function nextPartDrawing(db, page) {
  
     var store = db.transaction('comments', 'readonly').objectStore('comments');
     var count = store.count();
-    var rowAmount;
 
     count.onsuccess = function() {
         console.log(count.result);
-        rowAmount = count.result;
-    
-    var advanceAmount, elemAmount;
-    advanceAmount = page === 1 ? count.result - maxCommentsOnPage * (maxPages - page) : maxCommentsOnPage * (maxPages - page);
-    elemAmount = page === 1 ? count.result % maxCommentsOnPage + advanceAmount : advanceAmount + maxCommentsOnPage;    
+        
+        var advanceAmount, elemAmount;
+        advanceAmount = page === maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + 2;
+        // count.result - count.result % maxCommentsOnPage
+        // advanceAmount = (advanceAmount === count.result ? advanceAmount - maxCommentsOnPage : advanceAmount) + 1;
+        elemAmount = advanceAmount + maxCommentsOnPage;
+        // page === maxPages ? (count.result % maxCommentsOnPage === 0 ? maxCommentsOnPage : count.result % maxCommentsOnPage) + advanceAmount : advanceAmount + maxCommentsOnPage
+        var elem = document.querySelector('#last-comment');
+        var result = [];
 
-    var elem = document.querySelector('#last-comment');
-    var result = [];
+        var key = IDBKeyRange.bound(advanceAmount, elemAmount, false, true);
+        var commentNumber = 1;
 
-    var key = IDBKeyRange.bound(advanceAmount, elemAmount, false, true);
+        db.transaction('comments', 'readonly').objectStore('comments').openCursor(key, 'prev').onsuccess = function(event) {
+            var cursor = event.target.result;
 
-    db.transaction('comments', 'readonly').objectStore('comments').openCursor(null, 'prev').onsuccess = function(event) {
-        var cursor = event.target.result;
+            if (!cursor) {
+                return;
+            }
 
-        if (!cursor) {
-            return;
-        }
+            var counter = 0;
+            var value = cursor.value;
+            console.log(value);
 
-        // var advanceAmount = page === 1 ? count.result - (count.result % maxCommentsOnPage) : maxCommentsOnPage;
+            result.push(value);
 
-        // if (!advanced && advanceAmount > 0) {
-        //     advanced = true;
-        //     cursor.advance((page-1)*maxCommentsOnPage);
-        // }
+            var clone = elem.cloneNode(true);
+            printComment(elem, clone, value['text'],  value['date'], commentNumber, 0);
+            commentNumber++;
 
-        var counter = 0;
-        var value = cursor.value;
-        console.log(value);
-
-        result.push(value);
-
-        var clone = elem.cloneNode(true);
-        printComment(elem, clone, value['text'],  value['date'], value['id'], 0);
-
-        if (counter < count.result && counter < maxCommentsOnPage) {
-            counter++;
-            cursor.continue();
+            if (counter < count.result && counter < maxCommentsOnPage) {
+                counter++;
+                cursor.continue();
+            }
         }
     }
 }
 
-
-    // transaction.oncomplete = () => {
-    //     for (i = result.length - 1; i >= 0; i--) {
-    //         var clone = elem.cloneNode(true);
-    //         printComment(elem, clone, result[i]['text'],  result[i]['date'], result[i]['id'], 0);
-    //     }
-    // }
-
-    // let transaction = db.transaction('comments', 'readonly');
-    // let comments = transaction.objectStore('comments');
-
-    // let request = comments.getAll();
-    // request.onsuccess = () => {
-
-    // }
-
-    // request.onerror = () => {
-    //     request.result = [];
-    // }
-    
-    
-    // transaction.oncomplete = () => {
-        
-    //     let items = request.result;
-    //     for (i = items.length - 1; i >= 0; i--) {
-    //         var clone = elem.cloneNode(true);
-    //         printComment(elem, clone, items[i]['text'],  items[i]['date'], items[i]['id'], 0);
-    //     }
-    // }
-}
-
 function deleteComments() {
-    
-    var db;
-    let openRequest = indexedDB.open("comments_base", 1);
-
-    openRequest.onupgradeneeded = function () {
-        console.log('update db');
-        db = openRequest.result;
-
-        if (!db.objectStoreNames.contains('comments')){
-            commentsStore = db.createObjectStore('comments', {keyPath: 'id', autoIncrement: true} );
-            
-            commentsStore.createIndex('id', 'id');
-            commentsStore.createIndex('date', 'date');
-            commentsStore.createIndex('text', 'text');
-
+    for (var i = 1; i <= maxCommentsOnPage; i++) {
+        var comment = document.querySelector('#comment' + i);
+        if (comment) {
+            comment.remove();
         }
-
-    };
-
-    openRequest.onsuccess = function () {
-
-        db = openRequest.result;
-        let transaction = db.transaction('comments', 'readonly');
-        let comments = transaction.objectStore('comments');
-
-        let request = comments.getAll();
-        request.onsuccess = () => {
-
-        }
-
-        request.onerror = () => {
-            request.result = [];
-        }
-        console.log('Success');
-
-        transaction.oncomplete = () => {
-            request = request.result;
-            for (i = 0; i < request.length; i++) {
-                var comment = document.querySelector('#comment' + request[i]['id']);
-                if (comment) {
-                    comment.remove();
-                }
-            }
-        }
-    };
-
-   
+    }
 }
 
 
