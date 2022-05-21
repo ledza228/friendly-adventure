@@ -532,9 +532,9 @@ function anotherAddCommentPart(db, fieldText){
         transaction.oncomplete = () => {
             console.log('Completing adding');
             changePage(1);
+            checkPages();            
             deleteComments();
             printComments(1);
-            checkPages();            
         }
     }
 
