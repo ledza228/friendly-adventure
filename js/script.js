@@ -296,11 +296,14 @@ if (!currentPage) {
 
 checkPages();
 
+deleteComments();
+printComments(currentPage);
 
 
-if (currentPage == "1") {
-    printComments(1);
-}
+
+// if (currentPage == "1") {
+//     printComments(1);
+// }
 
 checkTextArea();
 
@@ -308,6 +311,8 @@ checkTextArea();
 document.getElementById('current-page').addEventListener('click', 
     function(){
         changePage(1);
+        deleteComments();
+        printComments(1);
 });
 commentForm.addEventListener('input', checkTextArea);
 
@@ -346,7 +351,7 @@ function checkPages() {
         var count = store.count();
 
         count.onsuccess = function() {
-            console.log('Current amount of rows while checking pages' + count.result);
+            console.log('Current amount of rows while checking pages ' + count.result);
             maxPages = Math.ceil(count.result / maxCommentsOnPage);
 
             var pageNumbers = document.getElementsByClassName('comments-page');
@@ -367,6 +372,8 @@ function checkPages() {
                     clone.id = 'page' + i;
                     clone.addEventListener('click', function(event) {
                         changePage(event.target.innerText);
+                        deleteComments();
+                        printComments(event.target.innerText);
                     });
                     pageNum.after(clone);
                 }
@@ -469,7 +476,7 @@ function addComment(fieldText) {
     openRequest.onsuccess = function () {
 
         db = openRequest.result;
-        console.log('Successfully opeed db to add comment');
+        console.log('Opened db to add comment');
         anotherAddCommentPart(db, fieldText)
     };
 
@@ -525,6 +532,8 @@ function anotherAddCommentPart(db, fieldText){
         transaction.oncomplete = () => {
             console.log('Completing adding');
             changePage(1);
+            deleteComments();
+            printComments(1);
             checkPages();            
         }
     }
@@ -536,6 +545,8 @@ function prevPage() {
     if (currentPage > 1) {
         currentPage--;
         changePage(currentPage);
+        deleteComments();
+        printComments(currentPage);
     }
 }
 
@@ -544,6 +555,8 @@ function nextPage() {
     if (currentPage < maxPages) {
         currentPage++;
         changePage(currentPage);
+        deleteComments();
+        printComments(currentPage);
     }
 }
 
@@ -555,8 +568,6 @@ function changePage(page) {
         futurePage.id = "current-page";
         sessionStorage.setItem("currentPage", page);
     }
-    deleteComments();
-    printComments(page);
 }
 
 function printComments(page) {
@@ -604,36 +615,35 @@ function nextPartDrawing(db, page) {
         console.log(count.result);
         
         var advanceAmount, elemAmount;
-        advanceAmount = page === maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + 2;
+        advanceAmount = page == maxPages ? 1 : maxCommentsOnPage * (maxPages - page - 1) + 2;
         
-        elemAmount = advanceAmount + maxCommentsOnPage;
+        elemAmount = advanceAmount + (page == maxPages ? count.result % maxCommentsOnPage : maxCommentsOnPage);
         var elem = document.querySelector('#last-comment');
-        var result = [];
 
         var key = IDBKeyRange.bound(advanceAmount, elemAmount, false, true);
-        var commentNumber = 1;
+        
+        
+        var request = db.transaction('comments', 'readonly').objectStore('comments').getAll()
+        request.onsuccess = function(event) {
+            console.log(request.result);
 
-        db.transaction('comments', 'readonly').objectStore('comments').openCursor(key, 'prev').onsuccess = function(event) {
-            var cursor = event.target.result;
-
-            if (!cursor) {
+            if (!request.result) {
                 return;
             }
 
             var counter = 0;
-            var value = cursor.value;
-            console.log(value);
-
-            result.push(value);
-
-            var clone = elem.cloneNode(true);
-            printComment(elem, clone, value['text'],  value['date'], commentNumber, 0);
-            commentNumber++;
-
+            var commentNumber = 1;
+            for (i = elemAmount - 2; i >= advanceAmount - 1; i--) {
+                if (request.result[i]) {
+                    var clone = elem.cloneNode(true);
+                    printComment(elem, clone, request.result[i]['text'], request.result[i]['date'], commentNumber, 0);
+                    commentNumber++;
+                }
+            }
             if (counter < count.result && counter < maxCommentsOnPage) {
                 counter++;
-                cursor.continue();
             }
+            console.log('Comments are printed');
         }
     }
 }
@@ -645,6 +655,7 @@ function deleteComments() {
             comment.remove();
         }
     }
+    console.log('Deleted comments');
 }
 
 
