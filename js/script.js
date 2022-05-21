@@ -554,9 +554,9 @@ function changePage(page) {
         var futurePage = document.getElementById("page" + page)
         futurePage.id = "current-page";
         sessionStorage.setItem("currentPage", page);
-        deleteComments();
-        printComments(page);
     }
+    deleteComments();
+    printComments(page);
 }
 
 function printComments(page) {
