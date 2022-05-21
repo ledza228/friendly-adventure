@@ -463,7 +463,6 @@ function addComment(fieldText) {
             commentsStore.createIndex('text', 'text');
 
         }
-        anotherAddCommentPart(db, fieldText);
 
     };
 
