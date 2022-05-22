@@ -287,6 +287,8 @@ document.getElementById("next-page").onclick = nextPage;
 var maxPages = 1;
 var maxCommentsOnPage = 4;
 
+var maxPagesInSlider = 7;
+
 var currentPage = sessionStorage.getItem("currentPage");
 
 if (!currentPage) {
@@ -294,7 +296,7 @@ if (!currentPage) {
 }
 
 
-checkPages();
+checkPages2();
 
 deleteComments();
 printComments(currentPage);
@@ -323,7 +325,53 @@ postButton.onclick = () => {
     addComment(commentForm.value);
 };
 
-function checkPages() {
+function deleteAllPageNumbers(){
+    var pageNumbers = document.getElementsByClassName('comments-page');
+    while (pageNumbers.length > 1){
+        pageNumbers[1].parentNode.removeChild(pageNumbers[1]);
+    }
+}
+
+function addPageNumber(num){
+    var pageNumbers = document.getElementsByClassName('comments-page');
+    lastPage = pageNumbers[pageNumbers.length - 1];
+    var clone = lastPage.cloneNode(true);
+    
+    clone.innerHTML = '<button type="button' + num + '">' + num + '<button>';
+    clone.id = 'page' + num;
+    clone.addEventListener('click', function(event) {
+        deleteCurrentPage();
+        addCurrentPageToNumPage(event.target.innerText);
+        checkPages2();
+        deleteComments();
+        printComments(event.target.innerText);
+    });
+    lastPage.after(clone);
+}
+
+
+function editFirstNumberToNum(num){
+    var firstNum = document.getElementsByClassName('comments-page')[0];
+    firstNum.id = "page" + num;
+    firstNum.innerHTML = '<button type="button' + num + '">' + num + '<button>';
+    firstNumClone = firstNum.cloneNode(true);
+    firstNum.parentNode.replaceChild(firstNumClone, firstNum);
+    firstNumClone.addEventListener('click', function(event) {
+        deleteCurrentPage();
+        addCurrentPageToNumPage(event.target.innerText);
+        checkPages2();
+        deleteComments();
+        printComments(event.target.innerText);
+    });
+}
+
+function getFirstNum(){
+    var firstNum = document.getElementsByClassName('comments-page')[0];
+    return parseInt(firstNum.innerText);
+}
+
+
+function checkPages2(){
     var db;
     let openRequest = indexedDB.open("comments_base", 1);
 
@@ -352,47 +400,46 @@ function checkPages() {
 
         count.onsuccess = function() {
             console.log('Current amount of rows while checking pages ' + count.result);
-            maxPages = Math.ceil(count.result / maxCommentsOnPage);
-
-            var pageNumbers = document.getElementsByClassName('comments-page');
-            var currentPageNumbers = pageNumbers.length;
-            if (maxPages === currentPageNumbers) {
-                return;
-            }
             
-            var pageNum = pageNumbers[currentPageNumbers-1];
-            if (!pageNum) {
-                console.log('No such page number');
-            }
+            maxPages = Math.ceil(count.result / maxCommentsOnPage);
+            middlePage = Math.ceil(maxPagesInSlider / 2);
+            
+            deleteAllPageNumbers();
+            console.log(document.getElementsByClassName('comments-page'));
 
-            if (maxPages > currentPageNumbers) {
-                for (var i = maxPages; i >= currentPageNumbers + 1; i--) {
-                    var clone = pageNum.cloneNode(true);
-                    clone.innerHTML = '<button type="button' + i + '">' + i + '<button>';
-                    clone.id = 'page' + i;
-                    clone.addEventListener('click', function(event) {
-                        changePage(event.target.innerText);
-                        deleteComments();
-                        printComments(event.target.innerText);
-                    });
-                    pageNum.after(clone);
+            if (maxPages <= maxPagesInSlider){
+                for (var i = 2; i < maxPages+1; i++){
+                    addPageNumber(i);
+                }
+            }
+            else if (currentPage <= middlePage){
+                if (getFirstNum() !== 1){
+                    editFirstNumberToNum(1);
+                }
+
+                for (var i=2; i < maxPagesInSlider + 1; i++){
+                    addPageNumber(i);
+                }
+                
+            }
+            else if (currentPage > middlePage && currentPage < maxPages - middlePage){
+                editFirstNumberToNum(currentPage - middlePage + 1);
+                for (var i=2;i < maxPagesInSlider + 1;i++){
+                    addPageNumber(currentPage - middlePage + i);
                 }
             }
             else {
-                for (var i = currentPageNumbers; i >= maxPages; i--) {
-                    var page = document.querySelector('#page' + i);
-                    if (page) {
-                        page.remove();
-                    }
-                }
+                var firstNumInEnd = maxPages - maxPagesInSlider + 1;
+                editFirstNumberToNum(firstNumInEnd);
+                for (var i=1;i < maxPagesInSlider; i++){
+                    addPageNumber(firstNumInEnd + i);
+                } 
             }
-            maxPages = pageNumbers.length;
-            console.log('Max pages = ' + maxPages);
-            changePage(currentPage);
+
+            deleteCurrentPage();
+            addCurrentPageToNumPage(currentPage);
         }
-
-    };
-
+    }
 }
 
 function changePostButton(button, toDisable) {
@@ -531,8 +578,10 @@ function anotherAddCommentPart(db, fieldText){
 
         transaction.oncomplete = () => {
             console.log('Completing adding');
-            changePage(1);
-            checkPages();            
+            currentPage = 1;
+            deleteCurrentPage();
+            addCurrentPageToNumPage(1);
+            checkPages2();            
             deleteComments();
             printComments(1);
         }
@@ -545,6 +594,7 @@ function prevPage() {
     if (currentPage > 1) {
         currentPage--;
         changePage(currentPage);
+        checkPages2();
         deleteComments();
         printComments(currentPage);
     }
@@ -555,6 +605,7 @@ function nextPage() {
     if (currentPage < maxPages) {
         currentPage++;
         changePage(currentPage);
+        checkPages2();
         deleteComments();
         printComments(currentPage);
     }
@@ -567,6 +618,22 @@ function changePage(page) {
         var futurePage = document.getElementById("page" + page)
         futurePage.id = "current-page";
         sessionStorage.setItem("currentPage", page);
+    }
+}
+
+function addCurrentPageToNumPage(num){
+    var futurePage = document.getElementById("page" + num);
+    if (futurePage === null)
+        return;
+    futurePage.id = "current-page";
+    sessionStorage.setItem("currentPage", num);
+    currentPage = num;
+}
+
+function deleteCurrentPage(){
+    var curPage = document.getElementById("current-page");
+    if (curPage !== null){
+        curPage.id = "page" + curPage.innerText;
     }
 }
 
